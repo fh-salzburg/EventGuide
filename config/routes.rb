@@ -1,10 +1,13 @@
 EventGuide::Application.routes.draw do
+  get "users/index"
+
   get "visitors/index"
 
   get "home/index"
   root :to => "home#index"
   
   resources :visitors
+  recources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
