@@ -30,7 +30,11 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-group :test do
-  # Pretty printed test output
-  gem 'turn', :require => false
+# bspw. sqlite in development und test
+group :development, :test do
+  gem 'sqlite3-ruby', :require => 'sqlite3'
+end
+# und mysql in Production
+group :production do
+  gem 'mysql2'
 end
