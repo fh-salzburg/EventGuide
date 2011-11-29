@@ -34,6 +34,7 @@ gem 'capistrano'
 group :development, :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'
 end
+
 # und mysql in Production
 group :production do
   gem 'mysql2'
