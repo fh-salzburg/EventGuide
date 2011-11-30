@@ -1,1 +1,6 @@
 <h1>Events</h1>
+<br/><br/>
+<% @events.each do |event| %>
+<%= link_to event.name, event %>
+<br/>
+<% end %>

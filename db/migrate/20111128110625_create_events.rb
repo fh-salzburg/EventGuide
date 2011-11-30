@@ -2,8 +2,8 @@ class CreateEvents < ActiveRecord::Migration
   def change
     create_table :events do |t|
       t.string :name
-      t.integer :room
-      t.textarea :description
+      t.string :room
+      t.text :description
       t.string :image
 
       t.timestamps
