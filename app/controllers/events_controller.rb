@@ -5,7 +5,14 @@ class Event < ApplicationController
     @events = Event.all
   end
  
-  def show()
+  def show
     @events = Event.find(pararms[:id])
   end
+  
+  def create
+    @event = Event.new(params[:id])
+    @event.save
+    redirect_to event_path
+  end
+  
 end

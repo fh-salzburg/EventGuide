@@ -1,0 +1,2 @@
+class StaticEventController < Event
+end

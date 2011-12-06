@@ -1,0 +1,2 @@
+class TimedEventController < Event
+end
