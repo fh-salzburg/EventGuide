@@ -1,0 +1,2 @@
+class StaticEvent < Event
+end

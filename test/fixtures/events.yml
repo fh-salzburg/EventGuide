@@ -2,12 +2,12 @@
 
 one:
   name: MyString
-  room: 1
-  description: 
-  image: MyString
+  raum: 1
+  beschreibung: MyString
+  bild: MyString
 
 two:
   name: MyString
-  room: 1
-  description: 
-  image: MyString
+  raum: 1
+  beschreibung: MyString
+  bild: MyString
