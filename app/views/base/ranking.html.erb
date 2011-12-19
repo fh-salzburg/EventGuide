@@ -1,0 +1,22 @@
+<%= render 'menu', { :permission => @permission } %>
+<div id="left_column">
+	<%= render 'eventlist' %>
+</div>
+<div id="right_column">
+	<table>
+	<tr>
+		<td>Rang</td>
+		<td>Name</td>
+		<td>Sterne</td>
+	</tr>	
+		<%
+		@visitors.each do |visitor| %>
+			<tr>
+				<td><%= @rank %></td>
+				<td><%= visitor.name %></td>
+				<td><%= visitor.number_of_stars %></td>
+			</tr>
+			<% @rank += 1 %>
+		<% end %>
+	</table>
+</div>
