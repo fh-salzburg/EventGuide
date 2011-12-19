@@ -6,35 +6,12 @@
  *= require_tree . 
 */
 
-#left_menu_station{
-  position: absolute;
-  border: 1px dotted black;
-  top: 0;
-  left: 0;
-  width: 15%;
-  height: 5%;
-  background: #121212;
-  z-index: 30;
-}
-
-#left_menu_event{
-  position: absolute;
-  border: 1px dotted black;
-  top: 0;
-  left: 15%;
-  width: 15%;
-  height: 5%;
-  background: #0884c4;
-  z-index: 30;
-}
-
 #left_column {
 	position: absolute;
-	top: 5%;
+	top: 0;
 	left: 0;
 	width: 30%;
-	height: 95%;
-  background: #0884c4;
+	height: 100%;
 	z-index: 20;
 }
 
@@ -43,20 +20,19 @@
 	top: 0;
 	left: 30%;
 	width: 70%;
-	height: 5%;
-	background: #121212;
+	height: 10%;
+	background: #555555;
 	text-align: right;
-  color: #dbdbdb;
 	z-index: 20;
 }
 
 #right_column {
 	position: absolute;
-	top: 5%;
+	top: 10%;
 	left: 30%;
 	width: 70%;
-	height: 95%;
-	//background-color: #999;
+	height: 90%;
+	background-color: #999;
 	border-left: 1px dotted black;
 	z-index: 10;
 }
