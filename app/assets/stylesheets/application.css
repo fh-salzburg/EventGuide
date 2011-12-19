@@ -6,17 +6,16 @@
  *= require_tree . 
 */
 
-#main {
+#left_column {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
+	width: 30%;
 	height: 100%;
-	background-color: #CCC; 
-	overflow: hidden;
+	z-index: 20;
 }
 
-#content {
+#right_column {
 	position: absolute;
 	top: 0;
 	left: 30%;
@@ -24,4 +23,5 @@
 	height: 100%;
 	background-color: #999;
 	border-left: 1px dotted black;
+	z-index: 10;
 }

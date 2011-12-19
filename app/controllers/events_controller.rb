@@ -1,10 +1,11 @@
-class EventsController < ApplicationController
-	def index
-		@events = Event.all
+class EventsController < BaseController
+	before_filter :get_eventlist,  :only => [:index]
+	before_filter :get_eventdetail,  :only => [:show, :edit, :update, :destroy]
+	
+	def index	
 	end
 	
 	def show
-		@event = Event.find(params[:id])
 	end
 	
 	def new
@@ -17,18 +18,23 @@ class EventsController < ApplicationController
 	end
 	
 	def edit
-		@event = Event.find(params[:id])
 	end
 	
 	def update
-		event = Event.find(params[:id])
 		event.update_attributes(params[:event])
 		redirect_to Event
 	end
 	
 	def destroy
-		event = Event.find(params[:id])
 		event.delete
 		redirect_to Event
+	end
+	
+	#def get_eventlist
+	#	@events = Event.all
+	#end
+	
+	def get_eventdetail
+		@event = Event.find(params[:id])
 	end
 end

@@ -1,4 +1,4 @@
-class VisitorsController < ApplicationController
+class VisitorsController < BaseController
   def index
   end
 

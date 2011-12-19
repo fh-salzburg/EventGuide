@@ -3,8 +3,8 @@ EventGuide::Application.routes.draw do
 
   get "visitors/index"
 
-  get "home/index"
-  root :to => "home#index"
+  get "base/index"
+  root :to => "base#index"
   
   resources :visitors, :users, :events
 
