@@ -1,11 +1,8 @@
 <%= render 'menu', { :permission => @permission } %>
 <div id="left_column">
-	<h1>Events</h1>
-	<br/><br/>
-	<% @events.each do |event| %>
-	<%= link_to event.name, event %>
-	<br/>
-	<% end %>
+	<%= render 'eventlist' %>
 </div>
+
 <div id="right_column">
+	<h1><%= @welcome %><h1>
 </div>
