@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111219230944) do
+ActiveRecord::Schema.define(:version => 20111128110625) do
 
- create_table "events", :force => true do |t|
+  create_table "events", :force => true do |t|
     t.string   "name"
     t.string   "room"
-	t.datetime "time_from"
-	t.datetime "time_to"
-	t.boolean "isAStation"
+    t.datetime "time_from"
+    t.datetime "time_to"
+    t.boolean  "isAStation"
     t.text     "description"
     t.string   "image"
     t.datetime "created_at"
