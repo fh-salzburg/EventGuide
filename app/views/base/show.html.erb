@@ -1,14 +1,13 @@
+<%= render 'menu', { :permission => @permission } %>
 <div id="left_column">
-	<h1>Events</h1>
-	<br/><br/>
-	not implemented yet
+	<%= render 'eventlist' %>
 </div>
 <div id="right_column">
+	<%= image_tag(@event.image) %>
 	<h3><%= @event.name %></h3>
 	Raum: <%= @event.room %>
 	<br/>
 	Beschreibung:<br/>
 	<%= @event.description %>
 	<br/><br/>
-	<%= link_to "back", events_path %>
 </div>

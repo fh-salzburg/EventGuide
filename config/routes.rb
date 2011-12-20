@@ -1,12 +1,14 @@
 EventGuide::Application.routes.draw do
   get "users/index"
-
   get "visitors/index"
-
   get "base/index"
+  
   root :to => "base#index"
   
   resources :visitors, :users, :events
+  
+  #match urls
+	match 'ranking', :to => 'base#ranking'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
