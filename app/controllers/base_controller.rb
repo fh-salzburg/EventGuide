@@ -19,13 +19,13 @@ class BaseController < ApplicationController
 	end
 	
 	def get_eventdetail
-    @event = Event.find(params[:id])
+		@event = Event.find(params[:id])
 	end
   
-  def timedevents
-   # if(Event.find(params[:id]).time != 'anytime')
-    @event = Event.find(params[:id])
-  end
+	def timed_events
+		# if(Event.find(params[:id]).time != 'anytime')
+		@event = Event.find(params[:id])
+	end
 	
 	#Actions which need the Visitor-Model
 	def ranking
