@@ -3,7 +3,8 @@ class BaseController < ApplicationController
 	require "visitor.rb"
 	require "user.rb"
 	
-	before_filter :get_eventlist,  :only => [:index, :show, :ranking, :events, :timed_events]	
+	before_filter :get_eventlist,  :only => [:index, :show, :ranking, :events]
+	before_filter :get_timed_eventlist, :only => [:timed_events]	
 	before_filter :get_eventdetail,  :only => [:show, :edit, :update, :destroy]
 	
 	def index
@@ -19,9 +20,13 @@ class BaseController < ApplicationController
   
   def timed_events
   end
+  
+  def get_timed_eventlist
+    @events = Event.where("isAStation" => false).order("time_from DESC")
+  end
   	
 	def get_eventlist
-		@events = Event.all
+		@events = Event.where("isAStation" => true).order("name ASC")
 	end
 	
 	def get_eventdetail
