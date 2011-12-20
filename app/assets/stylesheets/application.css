@@ -12,7 +12,7 @@
 	left: 0;
 	width: 99%;
 	height: 4%;
-	background-color: #000;
+	background-color: #121212;
 	color: white;
 	text-align: right;
 	padding: 0.5%;
@@ -35,6 +35,7 @@
 	left: 0;
 	width: 28%;
 	height: 87.5%;
+	background: #1095da;
 	padding: 1%;
 	z-index: 20;
 }
@@ -45,7 +46,6 @@
 	left:28%;
 	width: 67.99%;
 	height: 87.5%;
-	background-color: #999;
 	border-left: 1px dotted black;
 	padding: 2%;
 	z-index: 10;
