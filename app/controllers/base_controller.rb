@@ -3,7 +3,7 @@ class BaseController < ApplicationController
 	require "visitor.rb"
 	require "user.rb"
 	
-	before_filter :get_eventlist,  :only => [:index, :show, :ranking]	
+	before_filter :get_eventlist,  :only => [:index, :show, :ranking, :timedevents]	
 	before_filter :get_eventdetail,  :only => [:show, :edit, :update, :destroy]
 	
 	def index
@@ -19,8 +19,13 @@ class BaseController < ApplicationController
 	end
 	
 	def get_eventdetail
-		@event = Event.find(params[:id])
-	end	
+    @event = Event.find(params[:id])
+	end
+  
+  def timedevents
+   # if(Event.find(params[:id]).time != 'anytime')
+    @event = Event.find(params[:id])
+  end
 	
 	#Actions which need the Visitor-Model
 	def ranking

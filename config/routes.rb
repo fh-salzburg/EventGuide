@@ -9,6 +9,7 @@ EventGuide::Application.routes.draw do
   
   #match urls
 	match 'ranking', :to => 'base#ranking'
+	match 'timedevents', :to => 'base#timedevents'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

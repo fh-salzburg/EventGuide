@@ -29,6 +29,15 @@
 	color: white;
 }
 
+#event_menu{
+position: absolute;
+left: 0;
+top: 0;
+padding: 0.5%;
+z-index: 30;
+font-size: 20px;
+}
+
 #left_column {
 	position: absolute;
 	top: 5%;

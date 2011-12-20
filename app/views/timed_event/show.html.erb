@@ -1,0 +1,16 @@
+<%= render 'menu', { :permission => @permission } %>
+<div id="left_column">
+	<%= render 'eventlist' %>
+</div>
+
+<div id="right_column">
+  <h3><%= @event.name %></h3>
+  Raum: <%= @event.room %><br/>
+  Beschreibung:<br/>
+  <%= @event.description %><br/>
+  Quiz?: <%= @event.isAQuiz %><br/>
+  <br/>
+  <%= link_to "back", events_path %>
+</div>
+
+

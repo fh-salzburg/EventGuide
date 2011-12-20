@@ -12,7 +12,7 @@
 	left: 0;
 	width: 99%;
 	height: 4%;
-	background-color: #000;
+	background-color: #121212;
 	color: white;
 	text-align: right;
 	padding: 0.5%;
@@ -27,6 +27,13 @@
 
 #menu a:hover {
 	color: white;
+}
+
+#event_menu{
+position: absolute;
+left: 0;
+top: 0;
+padding: 1%;
 }
 
 #left_column {
@@ -46,7 +53,6 @@
 	left:28%;
 	width: 67.99%;
 	height: 87.5%;
-	background-color: #121212;
 	border-left: 1px dotted black;
 	padding: 2%;
 	z-index: 10;
