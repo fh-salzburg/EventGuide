@@ -15,15 +15,15 @@ class BaseController < ApplicationController
 	def show
 	end
 	
-  def events
-  end
-  
-  def timed_events
-  end
-  
-  def get_timed_eventlist
-    @events = Event.where("isAStation" => false).order("time_from DESC")
-  end
+	def events
+	end
+
+	def timed_events
+	end
+
+	def get_timed_eventlist
+	@events = Event.where("isAStation" => false).order("time_from DESC")
+	end
   	
 	def get_eventlist
 		@events = Event.where("isAStation" => true).order("name ASC")

@@ -7,3 +7,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(document).ready(function(){
+   $("#loginbutton").toggle(function(){
+     $("#login").animate({ height: 'show', opacity: 'show' }, 'normal');
+   },function(){
+     $("#login").animate({ height: 'hide', opacity: 'hide' }, 'normal');
+   });
+});

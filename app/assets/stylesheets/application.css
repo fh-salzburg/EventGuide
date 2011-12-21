@@ -70,5 +70,5 @@ font-size: 20px;
 	background-color: #dedede;
 	border: 1px dotted black;
 	z-index: 50;
-	visibility: hidden;
+	display: none;
 }
