@@ -12,7 +12,8 @@
 	left: 0;
 	width: 99%;
 	height: 4%;
-	background-color: #121212;
+	background: url('../images/oberer_grauer_balken.png') no-repeat;
+	background-repeat: repeat-x;
 	color: white;
 	text-align: right;
 	padding: 0.5%;

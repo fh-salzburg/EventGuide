@@ -12,7 +12,7 @@
 	left: 0;
 	width: 99%;
 	height: 4%;
-	background-color: #121212;
+	background: url('../images/oberer_grauer_balken.png');
 	color: white;
 	text-align: right;
 	padding: 0.5%;
@@ -33,7 +33,9 @@
 position: absolute;
 left: 0;
 top: 0;
-padding: 1%;
+padding: 0.5%;
+z-index: 30;
+font-size: 20px;
 }
 
 #left_column {
@@ -41,7 +43,7 @@ padding: 1%;
 	top: 5%;
 	left: 0;
 	width: 28%;
-	height: 87.5%;
+	height: 91.2%;
 	background: #1095da;
 	padding: 1%;
 	z-index: 20;
@@ -50,10 +52,23 @@ padding: 1%;
 #right_column {
 	position: absolute;
 	top: 5%;
-	left:28%;
-	width: 67.99%;
+	left:30%;
+	width: 65.99%;
 	height: 87.5%;
+	background-color: #dedede;
 	border-left: 1px dotted black;
 	padding: 2%;
 	z-index: 10;
+}
+
+#login {
+	position: relative;
+	margin: auto;
+	top: 200px;
+	width: 300px;
+	height: 200px;
+	background-color: #dedede;
+	border: 1px dotted black;
+	z-index: 50;
+	display: none;
 }
