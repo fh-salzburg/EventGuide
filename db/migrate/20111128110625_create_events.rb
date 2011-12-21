@@ -6,6 +6,7 @@ class CreateEvents < ActiveRecord::Migration
 	t.datetime "time_from"
 	t.datetime "time_to"
 	t.boolean "isAStation"
+	t.text		"short_description"
     t.text     "description"
     t.string   "image"
 
