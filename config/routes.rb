@@ -9,6 +9,7 @@ EventGuide::Application.routes.draw do
   match 'ranking', :to => 'base#ranking'
   match 'timedevents', :to => 'base#timed_events'
   match 'events', :to => 'base#events'  
+  match 'login', :to => 'users#login'
 
   root :to => "base#index"
   

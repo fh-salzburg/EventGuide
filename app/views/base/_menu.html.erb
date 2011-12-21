@@ -1,8 +1,9 @@
 <div id="menu">
   <div id="event_menu">
-  <%= link_to "Stationen & Quiz", :controller => "base", :action => "events"%> | 
-  <%= link_to "Events", :controller => "base", :action => "timed_events"%>
+  <%= link_to "Stationen & Quiz", events_path %> | 
+  <%= link_to "Events", timedevents_path %>
   </div>
-	<%=link_to "Home", :controller => "base", :action => "index" %> | 
-	<%=link_to "Ranking", :controller => "base", :action => "ranking" %>
+	<%=link_to "Home", root_path %> | 
+	<%=link_to "Ranking", ranking_path %> | 
+	<%=link_to "Login", "#", :id => "login_button"%>
 </div>
