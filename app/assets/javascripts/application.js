@@ -8,11 +8,6 @@
 //= require jquery_ujs
 //= require_tree .
 $(document).ready(function(){
-   $("#loginbutton").toggle(function(){
-     $("#login").fadeIn('slow');
-   },function(){
-     $("#login").fadeOut('slow');
-   });
 
 	$("#event_menu_events").click(function(){
 			$("#event_menu").css("background-position","center 100%");
@@ -20,6 +15,26 @@ $(document).ready(function(){
 
 	$("#event_menu_timed").click(function(){
 			$("#event_menu").css("background-position","center 0%");
+	});
+	
+	/* This is basic - uses default settings */
+	
+	$("a#loginbutton").fancybox();
+	
+	/* Using custom settings */
+	
+	$("a#inline").fancybox({
+		'hideOnContentClick': true
+	});
+
+	/* Apply fancybox to multiple items */
+	
+	$("a.group").fancybox({
+		'transitionIn'	:	'elastic',
+		'transitionOut'	:	'elastic',
+		'speedIn'		:	600, 
+		'speedOut'		:	200, 
+		'overlayShow'	:	false
 	});
 });
 
