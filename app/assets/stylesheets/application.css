@@ -10,10 +10,13 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 30%;
+	width: 31.9%;
 	height: 5.5%;
-	background: url('../images/events_menu.png') no-repeat center, url('../images/events_menu_rechts.png') repeat-x center, url('../images/events_menu_links.png') left;
-	background-size: auto 100%;
+	background: url('../images/events_menu.png') no-repeat;
+	background-position: center 0%; /* 0% um die obere Hälfte des Bildes anzuzeigen */
+	background-size: auto 200%; /* 200% streckt das Bild auf doppelte höhe um nur die untere oder die obere Hälfte des Bildes anzeigen zu können*/
+	background-position: center 100%;
+	background-size: auto 200%;
 	z-index: 40;
 }
 
