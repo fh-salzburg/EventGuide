@@ -11,12 +11,10 @@
 	top: 0;
 	left: 0;
 	width: 31.9%;
-	height: 5.5%;
+	height: 5.7%;
 	background: url('../images/events_menu.png') no-repeat;
 	background-position: center 0%; /* 0% um die obere Hälfte des Bildes anzuzeigen */
-	background-size: auto 200%; /* 200% um die untere Hälfte des Bildes anzuzeigen */
-	background-position: center 100%;
-	background-size: auto 200%;
+	background-size: auto 200%; /* 200% streckt das Bild auf doppelte höhe um nur die untere oder die obere Hälfte des Bildes anzeigen zu können*/
 	z-index: 40;
 }
 
@@ -46,15 +44,16 @@
 
 #menu {
 	position: absolute;
+	border-bottom: 1px solid #e8eae9;
 	top: 0;
-	left: 30%;
-	width: 69%;
+	left: 31.9%;
+	width: 66.3%;
 	height: 4%;
 	background: url('../images/oberer_grauer_balken.png') no-repeat;
 	background-repeat: repeat-x;
 	color: white;
 	text-align: right;
-	padding: 0.5%;
+	padding: 0.5% 1% 0.5% 1%;
 	z-index: 30;
 	font-size: 20px;
 }
@@ -70,26 +69,54 @@
 
 #left_column {
 	position: absolute;
-	top: 5%;
+	top: 5.7%;
 	left: 0;
 	width: 30%;
-	height: 91.2%;
-	background-image: -moz-linear-gradient(top, #0e97dd, #1672a1);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #0e97dd), color-stop(1.0,#1672a1));
+	height: 91%;
+	background-image: -moz-linear-gradient(top, #0e91d5, #1672a1);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #0e91d5), color-stop(1.0,#1672a1));
 	padding: 1%;
 	z-index: 20;
+}
+
+#eventlist{
+	position: absolute;
+	top: 5%;
+	left: 0%;
+	width: 28%;
+	height: 50px;
+	background: #323232;
 }
 
 #right_column {
 	position: absolute;
 	top: 5%;
-	left:30%;
-	width: 65.99%;
-	height: 87.5%;
+	left:31.9%;
+	width: 64.2%;
+	height: 87.9%;
 	background-color: #dedede;
-	border-left: 1px dotted black;
 	padding: 2%;
 	z-index: 10;
+}
+
+#image{
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 45%;
+	background: white;
+}
+
+#description{
+	border: 1px dotted black;
+	position: absolute;
+	top: 45%;
+	left: 0%;
+	width: 100%;
+	height: 50%;
+	background-image: -moz-linear-gradient(top, #f9f9f9, #dcdcdc);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #f9f9f9), color-stop(1.0,#dcdcdc));
 }
 
 #login {

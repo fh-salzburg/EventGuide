@@ -4,11 +4,13 @@
 	<%= render 'eventlist' %>
 </div>
 <div id="right_column">
-	<%= image_tag(@event.image) %>
-	<h3><%= @event.name %></h3>
-	Raum: <%= @event.room %>
-	<br/>
-	Beschreibung:<br/>
-	<%= @event.description %>
-	<br/><br/>
+	<div id="image"><%= image_tag(@event.image) %></div>
+	<div id="description">
+    <h3><%= @event.name %></h3>
+    Raum: <%= @event.room %>
+    <br/>
+    Beschreibung:<br/>
+    <%= @event.description %>
+    <br/><br/>
+  </div>
 </div>

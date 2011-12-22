@@ -15,11 +15,11 @@ $(document).ready(function(){
    });
 
 	$("#event_menu_events").click(function(){
-			$("#event_menu").css("background-position","center 100%");
+			$("#event_menu").css("background-position","center 100%"); //background-position: center 100%
 	});
 
 	$("#event_menu_timed").click(function(){
-			$("#event_menu").css("background-position","center 0%");
+			$("#event_menu").css("background-position","center 0%"); //background-position: center 100%
 	});
 });
 

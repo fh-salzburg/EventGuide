@@ -1,7 +1,7 @@
 <% @events.each do |event| %>
-<div id="eventlist">
+<p>
 <%= link_to event.name, event %>
 <br/>
 <%= event.short_description %>
-</div>
+</p>
 <% end %>
