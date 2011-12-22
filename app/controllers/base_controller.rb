@@ -6,9 +6,15 @@ class BaseController < ApplicationController
 	before_filter :get_eventlist,  :only => [:index, :show, :ranking, :events]
 	before_filter :get_timed_eventlist, :only => [:timed_events]	
 	before_filter :get_eventdetail,  :only => [:show, :edit, :update, :destroy]
+	before_filter :get_permission
 	
 	def index
 		@welcome = "Welcome to FHS EventGuide! :)"
+		session[:permission] = 0;
+	end
+	
+	def get_permission
+    @permission = session[:permission]
 	end
 
 	#Actions which need the Event-Model

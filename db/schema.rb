@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20111128110625) do
     t.datetime "time_from"
     t.datetime "time_to"
     t.boolean  "isAStation"
+    t.text     "short_description"
     t.text     "description"
     t.string   "image"
     t.datetime "created_at"
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20111128110625) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "password"
+    t.string   "salt"
     t.string   "email"
     t.string   "type"
     t.datetime "created_at"

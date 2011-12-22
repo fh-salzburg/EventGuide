@@ -5,5 +5,17 @@
 <div id="menu">
 	<%=link_to "Home", root_path %> | 
 	<%=link_to "Ranking", ranking_path %> | 
-	<%=link_to "Login", "#", :id => "loginbutton"%>
+   	<% if permission == 1 %>
+		<%=link_to "Gruppe" %> |  	
+   	<% elsif permission == 2 %>
+	 	<%=link_to "Events verwalten" %> | 
+		<%=link_to "Benutzer verwalten" %> | 
+	<% end %> 		
+	
+	<% if permission == 0 %>
+		<%=link_to "Login", "#", :id => "loginbutton"%> 
+	<% else %>
+		<%=link_to "Logout", "#"%> 
+	<% end %>
+
 </div>

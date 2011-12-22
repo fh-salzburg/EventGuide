@@ -9,8 +9,8 @@
 //= require_tree .
 $(document).ready(function(){
    $("#loginbutton").toggle(function(){
-     $("#login").animate({ height: 'show', opacity: 'show' }, 'normal');
+     $("#login").fadeIn('slow');
    },function(){
-     $("#login").animate({ height: 'hide', opacity: 'hide' }, 'normal');
+     $("#login").fadeOut('slow');
    });
 });

@@ -1,8 +1,7 @@
-<h1>Events</h1>
 <% @events.each do |event| %>
 <p>
 <%= link_to event.name, event %>
 <br/>
-<%= event.description %>
+<%= event.short_description %>
 </p>
 <% end %>
