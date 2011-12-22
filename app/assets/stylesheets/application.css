@@ -6,6 +6,10 @@
  *= require_tree . 
 */
 
+body{
+overflow: hidden;
+}
+
 #event_menu{
 	position: absolute;
 	top: 0;
@@ -24,7 +28,6 @@
 	left: 0;
 	width: 20%;
 	height: 4%;
-	//background: #0e97dd;
 	padding: 0.5% 1% 0.5% 1%;
 	z-index: 40;
 	font-size: 20px;
@@ -36,7 +39,6 @@
 	left: 20%;
 	width: 10%;
 	height: 4%;
-	//background: #121212;
 	padding: 0.5% 1% 0.5% 1%;
 	z-index: 40;
 	font-size: 20px;
@@ -58,12 +60,12 @@
 	font-size: 20px;
 }
 
-#menu a {
+#menu a, #event_menu_left a, #event_menu_right a {
 	color: #dedede;
 	text-decoration: none;
 }
 
-#menu a:hover {
+#menu a:hover, #event_menu_left a:hover, #event_menu_right a:hover {
 	color: white;
 }
 
@@ -71,21 +73,22 @@
 	position: absolute;
 	top: 5.7%;
 	left: 0;
-	width: 30%;
-	height: 91%;
+	width: 31.9%;
+	height: 94.3%;
 	background-image: -moz-linear-gradient(top, #0e91d5, #1672a1);
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #0e91d5), color-stop(1.0,#1672a1));
-	padding: 1%;
 	z-index: 20;
 }
 
 #eventlist{
-	position: absolute;
-	top: 5%;
+	position: relative;
+	border-bottom: 1px solid #095e87;
+	border-top: 1px solid #68bce8;
 	left: 0%;
-	width: 28%;
-	height: 50px;
-	background: #323232;
+	width: 99%;
+	height: 100px;
+	background-image: -moz-linear-gradient(top, #0e91d5, #0d85c2);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #0e91d5), color-stop(1.0,#0d85c2));
 }
 
 #right_column {
