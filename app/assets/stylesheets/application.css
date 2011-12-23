@@ -116,15 +116,16 @@ h3.login {
 	left: 0;
 	right: 0;
 	height: 291px;
-	background: url('../images/oberer_grauer_balken.png') no-repeat;
+	background: url('../images/testbild.png') no-repeat;
+	background-size: 100%;
 }
 
 #description{
 	position: absolute;
-	top: 45%;
-	left: 0%;
-	width: 100%;
-	height: 50%;
+	top: 291px;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	background-image: -moz-linear-gradient(top, #f9f9f9, #dcdcdc);
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #f9f9f9), color-stop(1.0,#dcdcdc));
 }
