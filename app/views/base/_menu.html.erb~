@@ -1,7 +1,8 @@
 <div id="event_menu"></div>
 <div id="event_menu_left"><%= link_to "Stationen & Quiz", events_path, :id => "event_menu_events" %></div>
-<div id="event_menu_right"><%= link_to "Events", timedevents_path %></div>
+<div id="event_menu_right"><%= link_to "Events", timedevents_path, :id => "event_menu_timed" %></div>
 
+<!-- <div id="menu_background"></div>  weil der hintergrund in 'menu' beim padding auch verschoben wird, was wir nicht wollen, lege ich mit dieser div einen hintergrund darunter -->
 <div id="menu">
 	<%=link_to "Home", root_path %> | 
 	<%=link_to "Ranking", ranking_path %> | 
@@ -13,7 +14,7 @@
 	<% end %> 		
 	
 	<% if permission == 0 %>
-		<%=link_to "Login", "#", :id => "loginbutton"%> 
+		<%=link_to "Login", "#login", :id => "loginbutton"%> 
 	<% else %>
 		<%=link_to "Logout", "#"%> 
 	<% end %>
