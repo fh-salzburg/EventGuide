@@ -33,7 +33,7 @@ h3.login {
 	top: 0;
 	left: 0;
 	width: 200px;
-	height: 40px;
+	//height: 40px;
 	padding: 8px;
 	z-index: 40;
 	font-size: 20px;
@@ -44,7 +44,7 @@ h3.login {
 	top: 0;
 	left: 200px;
 	width: 107px;
-	height: 4px;
+	//height: 4px;
 	padding: 8px;
 	z-index: 40;
 	font-size: 20px;
@@ -82,8 +82,8 @@ h3.login {
 	left: 0;
 	width: 307px;
 	height: 94.3%;
-	background-image: -moz-linear-gradient(top, #0e91d5, #1672a1);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #0e91d5), color-stop(1.0,#1672a1));
+	background-image: -moz-linear-gradient(top, #0f92d8, #1573a4);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #0f92d8), color-stop(1.0,#1573a4));
 	z-index: 20;
 }
 
@@ -95,8 +95,8 @@ h3.login {
 	top: -1px;
 	width: 302px;
 	height: 97px;
-	background-image: -moz-linear-gradient(top, #0e91d5, #0d85c2);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #0e91d5), color-stop(1.0,#0d85c2));
+	background-image: -moz-linear-gradient(top, #0e91d5, #0d84c1);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #0e91d5), color-stop(1.0,#0d84c1));
 }
 
 #right_column {
@@ -110,12 +110,24 @@ h3.login {
 	z-index: 10;
 }
 
+#facts{
+	position: absolute;
+	top: 282px;
+	right: -16px;
+	bottom: 0;
+	width: 240px;
+	padding: 8px;
+	background: url('../images/facts.png') no-repeat;
+	z-index: 20;
+}
+
 #image{
 	position: absolute;
+	border-bottom: 1px solid #989898;
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 291px;
+	height: 290px;
 	background: url('../images/testbild.png') no-repeat;
 	background-size: 100%;
 }
@@ -124,10 +136,9 @@ h3.login {
 	position: absolute;
 	top: 291px;
 	left: 0;
-	right: 0;
+	right: 240px;
 	bottom: 0;
-	background-image: -moz-linear-gradient(top, #f9f9f9, #dcdcdc);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #f9f9f9), color-stop(1.0,#dcdcdc));
+	background: url('../images/facts_shadow.png') repeat-y right, url('../images/description.png') repeat-x top left;
 }
 
 #login {
