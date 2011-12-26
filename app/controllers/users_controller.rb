@@ -1,7 +1,18 @@
 class UsersController < BaseController
 #all actions with views are in basecontroller
+def index
+	if session[:permission] < 2
+		redirect_to root_url
+	else
+	end
+end
+
 def new
-	@user = User.new
+	if session[:permission] < 2
+		redirect_to root_url
+	else
+		@user = User.new
+	end
 end
 
 def create
