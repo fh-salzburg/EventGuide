@@ -10,7 +10,7 @@ class BaseController < ApplicationController
 	
 	def index
 		@welcome = "Welcome to FHS EventGuide! :)"
-		session[:permission] = 0;
+		session[:permission] = 2;
 	end
 	
 	def get_permission

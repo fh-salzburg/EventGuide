@@ -20,6 +20,8 @@ $(document).ready(function(){
 	/* This is basic - uses default settings */
 	
 	$("a#loginbutton").fancybox();
+	$("a#newUserbutton").fancybox();
+	$("a#newEventbutton").fancybox();
 	
 	/* Using custom settings */
 	

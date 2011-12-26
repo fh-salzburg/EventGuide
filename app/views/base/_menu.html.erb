@@ -8,8 +8,8 @@
    	<% if permission == 1 %>
 		<%=link_to "Gruppe" %> |  	
    	<% elsif permission == 2 %>
-	 	<%=link_to "Events verwalten" %> | 
-		<%=link_to "Benutzer verwalten" %> | 
+	 	<%=link_to "Events verwalten", events_path %> | 
+		<%=link_to "Benutzer verwalten", users_path %> | 
 	<% end %> 		
 	
 	<% if permission == 0 %>
