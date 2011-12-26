@@ -1,8 +1,12 @@
 EventGuide::Application.routes.draw do
 
-  get "base/index"
-    
-  resources :visitors, :users, :events
+	get "base/index"
+	get "log_out" => "sessions#destroy", :as => "log_out"
+	get "log_in" => "sessions#new", :as => "log_in"
+	get "sign_up" => "users#new", :as => "sign_up"
+
+
+  resources :visitors, :users, :events, :sessions
 
   #match urls
   match 'index', :to => 'base#index'
@@ -11,8 +15,9 @@ EventGuide::Application.routes.draw do
   match 'events', :to => 'base#events'  
   match 'login', :to => 'users#login'
 
-  root :to => "base#index"
-  
+	root :to => "base#index"
+	#root :to => "users#new" 
+	
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
