@@ -1,12 +1,45 @@
 <%= render 'menu', { :permission => @permission } %>
-<%= render 'login' %>
 <div id="left_column">
 	<%= render 'eventlist' %>
 </div>
 
 <div id="right_column">
-	<h1>Users#index</h1>
-	<p>Find me in app/views/users/index.html.erb</p>
-
-	<%=link_to "Benutzer anlegen", new_user_path , :id=> "newUserbutton" %>
+	<h1>User</h1>
+	<%=link_to "Benutzer anlegen", new_user_path %>
+	
+	<h2>Guides</h2>
+	<table>
+		<tr>
+			<td>ID</td>
+			<td>Name</td>
+			<td>E-Mail</td>
+			<td>Aktion</td>
+		</tr>		
+		<% @admins.each do |a| %>
+		<tr>
+			<td><%= a.id %></td>
+			<td><%= a.name %></td>
+			<td><%= a.email %></td>
+			<td>Passwort &auml;ndern | Bearbeiten | L&ouml;schen</td>
+		</tr>
+	<% end %>
+	</table>
+	
+	<h2>Admins</h2>
+	<table>
+		<tr>
+			<td>ID</td>
+			<td>Name</td>
+			<td>E-Mail</td>
+			<td>Aktion</td>
+		</tr>
+		<% @guides.each do |a| %>
+		<tr>
+			<td><%= a.id %></td>
+			<td><%= a.name %></td>
+			<td><%= a.email %></td>
+			<td>Passwort &auml;ndern | Bearbeiten | L&ouml;schen</td>
+		</tr>
+	<% end %>		
+	</table>
 </div>

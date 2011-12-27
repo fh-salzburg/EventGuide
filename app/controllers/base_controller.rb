@@ -3,7 +3,7 @@ class BaseController < ApplicationController
 	require "visitor.rb"
 	require "user.rb"
 	
-	before_filter :get_eventlist,  :only => [:index, :show, :ranking, :events]
+	before_filter :get_eventlist,  :only => [:index, :show, :ranking, :stations, :new]
 	before_filter :get_timed_eventlist, :only => [:timed_events]	
 	before_filter :get_eventdetail,  :only => [:show, :edit, :update, :destroy]
 	before_filter :get_permission
@@ -21,7 +21,7 @@ class BaseController < ApplicationController
 	def show
 	end
 	
-	def events
+	def stations
 	end
 
 	def timed_events

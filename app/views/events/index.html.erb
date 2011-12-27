@@ -1,11 +1,30 @@
 <%= render 'menu', { :permission => @permission } %>
-<%= render 'login' %>
 <div id="left_column">
 	<%= render 'eventlist' %>
 </div>
 
 <div id="right_column">
 	<h1>Events</h1>
-		<%=link_to "Event anlegen", new_event_path , :id=> "newEventbutton" %>
+		<%=link_to "Event anlegen", new_event_path %>
+	
+	<table>
+		<tr>
+			<td>Name</td>
+			<td>Raum</td>
+			<td>Zeit</td>
+			<td>Station</td>
+			<td>Aktion</td>
+		</tr>
+	<%
+	@events.each do |event| %>
+		<tr>
+			<td><%= event.name %></td>
+			<td><%= event.room %></td>
+			<td><%= event.time_from %> - <%= event.time_to %></td>
+			<td><%= event.isAStation %></td>
+			<td>Bearbeiten | L&ouml;schen</td>
+		</tr>
+	<% end %>
+	</table>
 </div>
 

@@ -1,9 +1,9 @@
 EventGuide::Application.routes.draw do
 
 	get "base/index"
-	get "log_out" => "sessions#destroy", :as => "log_out"
-	get "log_in" => "sessions#new", :as => "log_in"
-	get "sign_up" => "users#new", :as => "sign_up"
+	get "logout" => "sessions#destroy", :as => "logout"
+	get "login" => "sessions#new", :as => "login"
+	get "signup" => "users#new", :as => "signup"
 
 
   resources :visitors, :users, :events, :sessions
@@ -12,7 +12,7 @@ EventGuide::Application.routes.draw do
   match 'index', :to => 'base#index'
   match 'ranking', :to => 'base#ranking'
   match 'timedevents', :to => 'base#timed_events'
-  match 'events', :to => 'base#events'  
+  match 'stations', :to => 'base#stations'  
   match 'login', :to => 'users#login'
 
 	root :to => "base#index"

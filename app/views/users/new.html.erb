@@ -1,5 +1,10 @@
-	
-<h1>Sign Up</h1>
+<%= render 'menu', { :permission => @permission } %>
+<div id="left_column">
+	<%= render 'eventlist' %>
+</div>
+
+<div id="right_column">	
+<h1>User erstellen</h1>
 
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
@@ -12,6 +17,10 @@
       </ul>
     </div>
   <% end %>
+    <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
   <p>
     <%= f.label :email %><br />
     <%= f.text_field :email %>
@@ -24,5 +33,11 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </p>
+    <p>
+    <%= f.label :type %><br />
+    <%= radio_button("user", "type", "2") %> Admin
+	<%= radio_button("user", "type", "1") %> Guide
+  </p>
   <p class="button"><%= f.submit %></p>
 <% end %>
+</div>
