@@ -26,6 +26,9 @@ def create
 	end
 end
 
+def show
+end
+
 def edit
   @user = User.find(params[:id])
 end
@@ -33,13 +36,13 @@ end
 def update
   user = User.find(params[:id])
   user.update_attributes(params[:user])
-  redirect_to user
+  redirect_to users_path
 end
 
 def destroy
   user = User.find(params[:id])
   user.delete
-  redirect_to user
+  redirect_to users_path
 end 
   
 end

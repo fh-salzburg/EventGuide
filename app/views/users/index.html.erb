@@ -38,7 +38,7 @@
 			<td><%= a.id %></td>
 			<td><%= a.name %></td>
 			<td><%= a.email %></td>
-			<td>Passwort &auml;ndern | Bearbeiten | L&ouml;schen</td>
+			<td>Passwort &auml;ndern | <%= link_to "bearbeiten", edit_user_path(a) %> | <%= link_to "löschen", user_path(a), :method => :delete, :confirm => "Wirklich löschen?"%></td>
 		</tr>
 	<% end %>		
 	</table>
