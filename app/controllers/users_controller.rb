@@ -4,8 +4,8 @@ def index
 	if session[:permission] < 2
 		redirect_to root_url
 	else
-	  @admins = User.where("type = 'admin'").order("email")
-    @guides = User.where("type = 'guide'").order("email")
+	  @adminUsers = User.where("usertype = 'admin'").order("email ASC")
+    @guides =     User.where("usertype = 'guide'").order("email ASC")
 	end
 end
 
@@ -25,8 +25,21 @@ def create
 	render "new"
 	end
 end
+
+def edit
+  @user = User.find(params[:id])
+end
+
+def update
+  user = User.find(params[:id])
+  user.update_attributes(params[:user])
+  redirect_to user
+end
+
+def destroy
+  user = User.find(params[:id])
+  user.delete
+  redirect_to user
+end 
   
- def login
-    #here is login function
-  end
 end

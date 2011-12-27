@@ -1,12 +1,16 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation
+  attr_accessible :name
+  attr_accessible :usertype
   
   attr_accessor :password
   before_save :encrypt_password
   
   validates_confirmation_of :password
-  validates_presence_of :password, :on => :create
-  validates_presence_of :email
+  validates_presence_of :password, :on => :create, :message => "angeben"
+  validates_presence_of :usertype, :on => :create, :message => "angeben"
+  validates_presence_of :name, :on => :create, :message => "angeben"
+  validates_presence_of :email, :message => "angeben"
   validates_uniqueness_of :email
   
   def self.authenticate(email, password)

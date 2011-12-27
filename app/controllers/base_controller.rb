@@ -3,9 +3,8 @@ class BaseController < ApplicationController
 	require "visitor.rb"
 	require "user.rb"
 	
-	before_filter :get_eventlist,  :only => [:index, :show, :ranking, :stations, :new]
+	before_filter :get_eventlist,  :only => [:index, :show, :ranking, :stations, :new, :create, :edit]
 	before_filter :get_timed_eventlist, :only => [:timed_events]	
-	before_filter :get_eventdetail,  :only => [:show, :edit, :update, :destroy]
 	before_filter :get_permission
 	
 	def index
@@ -19,6 +18,7 @@ class BaseController < ApplicationController
 
 	#Actions which need the Event-Model
 	def show
+    @event = Event.find(params[:id])
 	end
 	
 	def stations
@@ -35,9 +35,6 @@ class BaseController < ApplicationController
 		@events = Event.where("isAStation" => true).order("name ASC")
 	end
 	
-	def get_eventdetail
-		@event = Event.find(params[:id])
-	end
   	
 	#Actions which need the Visitor-Model
 	def ranking
