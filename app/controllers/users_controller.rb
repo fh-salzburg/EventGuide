@@ -4,8 +4,8 @@ def index
 	if session[:permission] < 2
 		redirect_to root_url
 	else
-	  @admins = User.where("type == 2").order("email")
-    @guides = User.where("type == 1").order("email")
+	  @admins = User.where("type = 'admin'").order("email")
+    @guides = User.where("type = 'guide'").order("email")
 	end
 end
 

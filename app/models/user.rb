@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation
-
+  
   attr_accessor :password
   before_save :encrypt_password
-
+  
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
   validates_presence_of :email
@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
       nil
     end
   end
-
+  
   def encrypt_password
     if password.present?
       self.password_salt = BCrypt::Engine.generate_salt
