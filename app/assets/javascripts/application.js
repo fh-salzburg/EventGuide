@@ -13,14 +13,14 @@ $(document).ready(function(){
   
 	$("#event_menu_events").click(function(){
 			$("#event_menu").css("background-position","center 100%");
-			$("#eventlist").css("background","$black");
+			$("#eventlist").css("background","#000000");
 	});
 
 	$("#event_menu_timed").click(function(){
 			$("#event_menu").css("background-position","center 0%");
-      $("#eventlist").css("background","$blue");
+      $("#eventlist").css("background","#999999");
 	});
-	
+
 	/* This is basic - uses default settings */
 	
 	$("a#loginbutton").fancybox();
