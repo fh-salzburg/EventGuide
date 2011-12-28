@@ -2,20 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$blue:   #123123;
-$black: #000000;
 
-#eventlist{
+
+.eventlist{
 	position: relative;
 	border-bottom: 1px solid #095e87;
 	border-top: 1px solid #68bce8;
 	left: 0;
 	top: -1px;
-	width: 302px;
-	height: 97px;
-  /*
-  background: $blue;
-  background-image: -moz-linear-gradient(top, #0e91d5, #0d84c1);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #0e91d5), color-stop(1.0,#0d84c1));
-  */
+	width: 287px;
+	height: 77px;
+  padding-left: 15px;
+  padding-top: 20px;
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }
