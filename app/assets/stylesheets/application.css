@@ -86,18 +86,7 @@ h3.login {
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #0f92d8), color-stop(1.0,#1573a4));
 	z-index: 20;
 }
-
-#eventlist{
-	position: relative;
-	border-bottom: 1px solid #095e87;
-	border-top: 1px solid #68bce8;
-	left: 0;
-	top: -1px;
-	width: 302px;
-	height: 97px;
-	background-image: -moz-linear-gradient(top, #0e91d5, #0d84c1);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #0e91d5), color-stop(1.0,#0d84c1));
-}
+/* the style for #eventlist is managemented in events.css.scss */
 
 #right_column {
 	position: absolute;

@@ -8,13 +8,17 @@
 //= require jquery_ujs
 //= require_tree .
 $(document).ready(function(){
-
+  
+  /* change the background in the eventlist depend on the the menuselection */
+  
 	$("#event_menu_events").click(function(){
 			$("#event_menu").css("background-position","center 100%");
+			$("#eventlist").css("background","$black");
 	});
 
 	$("#event_menu_timed").click(function(){
 			$("#event_menu").css("background-position","center 0%");
+      $("#eventlist").css("background","$blue");
 	});
 	
 	/* This is basic - uses default settings */
