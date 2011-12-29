@@ -10,11 +10,6 @@
 $(document).ready(function(){
  
 
-  /* funktioniert noch nicht */
-  $('#event_menu_events').bind('ajax:success', function(data){
-   // $("#left_column").html('<% @events.each do |event| %><div class="eventlist"><%= link_to event.name, event %><br/><%= event.short_description %></div><% end %>');
-  });
-
   /* change the background and textcolor in the eventlist depend on the the menuselection */  
 	$("#event_menu_events").click(function(){
 			$("#event_menu").css("background-position","center 100%");

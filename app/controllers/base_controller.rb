@@ -22,6 +22,10 @@ class BaseController < ApplicationController
 	end
 	
 	def stations
+      respond_to do |format|
+      format.html
+      format.js
+    end
 	end
 
 	def timed_events
@@ -33,6 +37,10 @@ class BaseController < ApplicationController
   	
 	def get_eventlist
 		@events = Event.where("isAStation" => true).order("name ASC")
+    respond_to do |format|
+      format.html
+      format.js
+    end
 	end
 	
   	
