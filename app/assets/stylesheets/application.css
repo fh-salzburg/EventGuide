@@ -23,7 +23,7 @@ h3.login {
 	width: 307px;
 	height: 40px;
 	background: url('../images/events_menu.png') no-repeat;
-	background-position: center 0%; /* 0% um die obere Hälfte des Bildes anzuzeigen */
+	background-position: center 100%; /* 0% um die obere Hälfte des Bildes anzuzeigen */
 	background-size: auto 200%; /* 200% streckt das Bild auf doppelte höhe um nur die untere oder die obere Hälfte des Bildes anzeigen zu können*/
 	z-index: 40;
 }
@@ -88,6 +88,7 @@ h3.login {
   overflow-y: auto;
   overflow-x: hidden;
 }
+
 /* the style for #eventlist is managemented in events.css.scss */
 
 #right_column {

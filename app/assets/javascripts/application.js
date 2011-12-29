@@ -9,26 +9,7 @@
 //= require_tree .
 $(document).ready(function(){
  
-
-  /* change the background and textcolor in the eventlist depend on the the menuselection */  
-	$("#event_menu_events").click(function(){
-			$("#event_menu").css("background-position","center 100%");
-			$(".eventlist").css("background-image","-moz-linear-gradient(top, #1a1a1a, #0d0d0d)");
-			$(".eventlist").css("background-image","-webkit-gradient(linear, left top, left bottom, color-stop(0.00, #1a1a1a), color-stop(1.0,#0d0d0d))");
-			$(".eventlist").css("border-top","1px solid #393939");
-			$(".eventlist").css("border-bottom","1px solid #060606");
-			$(".eventlist").css("color","#78797a");
-	});
-
-	$("#event_menu_timed").click(function(){
-			$("#event_menu").css("background-position","center 0%");
-      $(".eventlist").css("background","#999999");
-			$(".eventlist").css("background-image","-moz-linear-gradient(top, #0e91d5, #0d84c1)");
-			$(".eventlist").css("background-image","-webkit-gradient(linear, left top, left bottom, color-stop(0.00, #0e91d5), color-stop(1.0,#0d84c1))");
-      $(".eventlist").css("border-top","1px solid #68bce8");
-			$(".eventlist").css("border-bottom","1px solid #095e87");
-			$(".eventlist").css("color","#303031");
-	});
+  /* The change of the background and textcolor in the eventlist depend on the the menuselection are moved to the viewfiles*/  
 
 	/* This is basic - uses default settings */
 	
