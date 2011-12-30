@@ -18,25 +18,25 @@
     </div>
   <% end %>
     <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
-  </p>
-    <p>
-    <%= f.label :usertype %><br />
+    <%= f.label :usertype, "Typ" %>
     <%= radio_button :user, :usertype, "admin" %> Admin
 	<%= radio_button :user, :usertype, "guide" %> Guide
+  </p>
+    <p>
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name, :size => "70" %>
+  </p>
+  <p>
+    <%= f.label :email, "E-Mail" %>
+    <%= f.email_field :email, :size => "70" %>
+  </p>
+  <p>
+    <%= f.label :password, "Passwort" %>
+    <%= f.password_field :password, :size => "70" %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation, "Passwortbestätigung" %>
+    <%= f.password_field :password_confirmation, :size => "70" %>
   </p>
   <p class="button"><%= f.submit %></p>
 <% end %>

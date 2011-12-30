@@ -53,6 +53,16 @@
   background: url('../images/facts_shadow.png') repeat-y right, url('../images/description.png') repeat-x top left;
 }
 
+.new_event label {
+  display: block;
+  float: left;
+  width: 100px;
+}
+
+.new_event .button {
+  /*text-align: right;*/
+}
+
 .select_date {
   display: none;
 }
