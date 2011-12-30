@@ -57,12 +57,14 @@
   display: block;
   float: left;
   width: 100px;
+  font-weight: bold;
 }
 
 .new_event .button {
   /*text-align: right;*/
+ border: 0;
 }
 
-.select_date {
+.new_event .select_date {
   display: none;
 }

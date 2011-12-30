@@ -32,10 +32,26 @@ overflow: hidden;
 	left: 307px;
 	right: 0;
 	bottom: 0;
-	background-color: #dedede;
-	padding: 3px;
+	background-color: #f1f1f1;
+	padding: 0 20px 0 20px;
 	z-index: 10;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
 
+form input {
+	height: 25px;
+}
+
+form p {
+	margin: 5px;
+}
+
+form label {
+	margin-top: 5px;
+}
+
+form p {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #999999;
+}

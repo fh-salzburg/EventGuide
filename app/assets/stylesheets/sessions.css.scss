@@ -10,10 +10,12 @@
   display: block;
   width: 80px;
   float: left;
+  font-weight: bold;
 }
 
 #login .button {
-  text-align: center;
+  text-align: right;
+  border: 0;
 }
 
 #login h3{

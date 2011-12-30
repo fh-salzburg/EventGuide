@@ -2,8 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+
 .new_user label {
   display: block;
   float: left;
   width: 150px;
+  font-weight: bold;
+}
+
+.new_user .button {
+  border: 0;
 }
