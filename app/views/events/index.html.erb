@@ -11,8 +11,8 @@
 		<tr class="tr_header">
 			<td class="td_name">Name</td>
 			<td class="td_room">Raum</td>
-			<td class="td_time">Zeit</td>
 			<td class="td_station">Station</td>
+			<td class="td_time">Zeit</td>
 			<td class="td_action">Aktion</td>
 		</tr>
 	<%
@@ -20,8 +20,15 @@
 		<tr>
 			<td><%= event.name %></td>
 			<td><%= event.room %></td>
+			<td class="station_pic">
+				<%= if event.isAStation == true
+						image_tag("ok.png", :height => "20")	
+					else
+						image_tag("no.png", :height => "20")
+					end		
+				 %>
+			</td>
 			<td><%= event.time_from %> - <%= event.time_to %></td>
-			<td><%= event.isAStation %></td>
 			<td class="td_action"><%= link_to image_tag("edit.png", :height => "25"), edit_event_path(event) %> <%= link_to image_tag("delete.png", :height => "25"), event_path(event), :method => :delete, :confirm => "Wirklich löschen?"%></td>
 		</tr>
 	<% end %>
