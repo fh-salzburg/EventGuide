@@ -3,11 +3,12 @@
 <div id="event_menu_right"><%= link_to "Events", timedevents_path, :remote => true, :id => "event_menu_timed" %></div>
 
 <div id="menu">
-	<%=link_to "Home", root_path %> | 
-	<%=link_to "Ranking", ranking_path %> | 
-   	<% if permission == "guide" %>
-		<%=link_to "Gruppe" %> |  	
-   	<% elsif permission == "admin" %>
+	<%=link_to image_tag("menu_home.png"), root_path %> | 
+	<%=link_to image_tag("menu_ranking.png"), ranking_path %> | 
+   	<% if permission == "guide" || permission == "admin" %>
+		<%=link_to image_tag("menu_visitors.png"), visitors_path %> |  	
+   	<% end
+   	   if permission == "admin" %>
 	 	<%=link_to "Events verwalten", events_path %> | 
 		<%=link_to "Benutzer verwalten", users_path %> | 
 	<% end %> 		

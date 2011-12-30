@@ -14,7 +14,7 @@
 			<tr>
 				<td><%= @rank %></td>
 				<td><%= visitor.name %></td>
-				<td><%= visitor.number_of_stars %></td>
+				<td><%= visitor.number_of_stars %> <%=image_tag("star.png") %></td>
 			</tr>
 			<% @rank += 1 %>
 		<% end %>

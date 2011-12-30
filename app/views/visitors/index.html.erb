@@ -1,2 +1,11 @@
-<h1>Visitors#index</h1>
-<p>Find me in app/views/visitors/index.html.erb</p>
+<%= render 'menu', { :permission => @permission } %>
+<div id="left_column">
+	<%= render 'eventlist' %>
+</div>
+
+<div id="right_column">
+	<h1>Besucher</h1>
+	<p>Besucher erstellen | Besucher suchen:</p>
+	<p>Meine Gruppe</p>
+	<p>not implemented yet</p>
+</div>
