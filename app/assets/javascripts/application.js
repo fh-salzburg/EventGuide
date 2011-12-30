@@ -9,6 +9,14 @@
 //= require_tree .
 $(document).ready(function(){
  
+	$("#radioButtonEvent").change(function() {
+		$(".select_date").fadeIn("slow");
+	});
+ 
+	$("#radioButtonStation").change(function() {
+		$(".select_date").fadeOut("slow");
+	});
+ 
   /* The change of the background and textcolor in the eventlist depend on the the menuselection are moved to the viewfiles*/  
 
 	/* This is basic - uses default settings */

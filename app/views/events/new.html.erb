@@ -17,39 +17,40 @@
       </ul>
     </div>
   <% end %>
+
     <p>
-    <%= e.label :name %><br />
+    <%= e.label :isAStation %>
+    <%= radio_button :event, :isAStation, true, :id => "radioButtonStation" %> Station oder Quiz
+	<%= radio_button :event, :isAStation, false, :id => "radioButtonEvent" %> Event
+  </p>
+    <p>
+    <%= e.label :name %>
     <%= e.text_field :name %>
   </p>
   <p>
-    <%= e.label :room %><br />
-    <%= e.text_field :room %>
-  </p>
-    <p>
-    <%= e.label :isAStation %><br />
-    <%= radio_button :event, :isAStation, true %> ja
-	<%= radio_button :event, :isAStation, false %> nein
+    <%= e.label :room %>
+    <%= e.text_field :room, :size => "12" %>
   </p>
   <p>
-    <%= e.label :time_from %><br />
-    <%= e.datetime_select :time_from %>  	
-  </p>
-  <p>
-    <%= e.label :time_to %><br />
-    <%= e.datetime_select :time_to %>  	
-  </p>
-  <p>
-    <%= e.label :short_description %><br />
-    <%= e.text_area :short_description %>  	
+    <%= e.label :short_description %>
+    <%= e.text_area :short_description, :size => "50x1" %>  	
   </p>
    <p>
-    <%= e.label :description %><br />
-    <%= e.text_area :description %>  	
+    <%= e.label :description %>
+    <%= e.text_area :description, :size => "50x5" %>  	
   </p> 
    <p>
-    <%= e.label :image %><br />
+    <%= e.label :image %>
     <%= e.file_field :image %>  	
   </p> 
+  <p class="select_date" >
+    <%= e.label :time_from %>
+    <%= e.datetime_select :time_from%>  	
+  </p>
+  <p class="select_date">
+    <%= e.label :time_to %>
+    <%= e.datetime_select :time_to %>  	
+  </p>
   <p class="button"><%= e.submit %></p>
 <% end %>
 </div>
