@@ -8,37 +8,37 @@
 	<%=link_to "Benutzer anlegen", new_user_path %>
 	
 	<h2>Guides</h2>
-	<table>
-		<tr>
-			<td>ID</td>
-			<td>Name</td>
-			<td>E-Mail</td>
-			<td>Aktion</td>
+	<table class="userstable">
+		<tr class="tr_header">
+			<td class="td_id">ID</td>
+			<td class="td_name">Name</td>
+			<td class="td_mail">E-Mail</td>
+			<td class="td_action">Aktion</td>
 		</tr>		
-		<% @adminUsers.each do |a| %>
-		<tr>
-			<td><%= a.id %></td>
-			<td><%= a.name %></td>
-			<td><%= a.email %></td>
-			<td>Passwort &auml;ndern | <%= link_to "bearbeiten", edit_user_path(a) %> | <%= link_to "löschen", user_path(a), :method => :delete, :confirm => "Wirklich löschen?"%></td>
-		</tr>
-	<% end %>
-	</table>
-	
-	<h2>Admins</h2>
-	<table>
-		<tr>
-			<td>ID</td>
-			<td>Name</td>
-			<td>E-Mail</td>
-			<td>Aktion</td>
-		</tr>
 		<% @guides.each do |a| %>
 		<tr>
 			<td><%= a.id %></td>
 			<td><%= a.name %></td>
 			<td><%= a.email %></td>
-			<td>Passwort &auml;ndern | <%= link_to "bearbeiten", edit_user_path(a) %> | <%= link_to "löschen", user_path(a), :method => :delete, :confirm => "Wirklich löschen?"%></td>
+			<td class="td_action"><%= link_to image_tag("key.png", :height => "25"), "#" %> <%= link_to image_tag("edit.png", :height => "25"), edit_user_path(a) %> <%= link_to image_tag("delete.png", :height => "25"), user_path(a), :method => :delete, :confirm => "Wirklich löschen?"%></td>
+		</tr>
+	<% end %>
+	</table>
+	
+	<h2>Admins</h2>
+	<table class="userstable">
+		<tr class="tr_header">
+			<td class="td_id">ID</td>
+			<td class="td_name">Name</td>
+			<td class="td_mail">E-Mail</td>
+			<td class="td_action">Aktion</td>
+		</tr>
+		<% @adminUsers.each do |a| %>
+		<tr>
+			<td><%= a.id %></td>
+			<td><%= a.name %></td>
+			<td><%= a.email %></td>
+			<td class="td_action"><%= link_to image_tag("key.png", :height => "25"), "#" %> <%= link_to image_tag("edit.png", :height => "25"), edit_user_path(a) %> <%= link_to image_tag("delete.png", :height => "25"), user_path(a), :method => :delete, :confirm => "Wirklich löschen?"%></td>
 		</tr>
 	<% end %>		
 	</table>
