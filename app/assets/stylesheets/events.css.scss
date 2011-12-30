@@ -21,3 +21,34 @@
     text-decoration: none;
   }
 }
+
+#facts{
+  position: absolute;
+  top: 282px;
+  right: -16px;
+  bottom: 0;
+  width: 240px;
+  padding: 8px;
+  background: url('../images/facts.png') no-repeat;
+  z-index: 20;
+}
+
+#image{
+  position: absolute;
+  border-bottom: 1px solid #989898;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 290px;
+  background: url('../images/testbild.png') no-repeat;
+  background-size: 100%;
+}
+
+#description{
+  position: absolute;
+  top: 291px;
+  left: 0;
+  right: 240px;
+  bottom: 0;
+  background: url('../images/facts_shadow.png') repeat-y right, url('../images/description.png') repeat-x top left;
+}

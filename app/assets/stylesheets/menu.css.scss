@@ -1,3 +1,63 @@
 // Place all the styles related to the Menu controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#event_menu{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 307px;
+  height: 40px;
+  background: url('../images/events_menu.png') no-repeat;
+  background-position: center 100%; /* 0% um die obere Hälfte des Bildes anzuzeigen */
+  background-size: auto 200%; /* 200% streckt das Bild auf doppelte höhe um nur die untere oder die obere Hälfte des Bildes anzeigen zu können*/
+  z-index: 40;
+}
+
+#event_menu_left{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  //height: 40px;
+  padding: 8px;
+  z-index: 40;
+  font-size: 20px;
+}
+
+#event_menu_right{
+  position: absolute;
+  top: 0;
+  left: 200px;
+  width: 107px;
+  //height: 4px;
+  padding: 8px;
+  z-index: 40;
+  font-size: 20px;
+}
+
+#menu {
+  position: absolute;
+  border-bottom: 1px solid #e8eae9;
+  top: 0;
+  left: 307px;
+  right: 0;
+  height: 24px;
+  padding: 8px;
+
+  background: url('../images/oberer_grauer_balken.png') no-repeat;
+  background-repeat: repeat-x;
+  color: white;
+  text-align: right;
+  z-index: 30;
+  font-size: 20px;
+}
+
+#menu a, #event_menu_left a, #event_menu_right a {
+  color: #dedede;
+  text-decoration: none;
+}
+
+#menu a:hover, #event_menu_left a:hover, #event_menu_right a:hover {
+  color: white;
+}
