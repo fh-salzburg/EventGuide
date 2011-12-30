@@ -3,8 +3,53 @@
 	<%= render 'eventlist' %>
 </div>
 
-<div id="right_column">
-	<h1>Neues Event</h1>
-	not implemented yet
-</div>
+<div id="right_column">	
+<h1>Event erstellen</h1>
 
+<%= form_for @event do |e| %>
+  <% if @event.errors.any? %>
+    <div class="error_messages">
+      <h3>Es sind folgende Fehler aufgetreten:</h3>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <p>
+    <%= e.label :name %><br />
+    <%= e.text_field :name %>
+  </p>
+  <p>
+    <%= e.label :room %><br />
+    <%= e.text_field :room %>
+  </p>
+    <p>
+    <%= e.label :isAStation %><br />
+    <%= radio_button :event, :isAStation, true %> ja
+	<%= radio_button :event, :isAStation, false %> nein
+  </p>
+  <p>
+    <%= e.label :time_from %><br />
+    <%= e.datetime_select :time_from %>  	
+  </p>
+  <p>
+    <%= e.label :time_to %><br />
+    <%= e.datetime_select :time_to %>  	
+  </p>
+  <p>
+    <%= e.label :short_description %><br />
+    <%= e.text_area :short_description %>  	
+  </p>
+   <p>
+    <%= e.label :description %><br />
+    <%= e.text_area :description %>  	
+  </p> 
+   <p>
+    <%= e.label :image %><br />
+    <%= e.file_field :image %>  	
+  </p> 
+  <p class="button"><%= e.submit %></p>
+<% end %>
+</div>
