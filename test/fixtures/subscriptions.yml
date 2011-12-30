@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  guide_id: 
+  visitor_id: 
+  is_in_group: 
+
+two:
+  guide_id: 
+  visitor_id: 
+  is_in_group: 
