@@ -9,11 +9,15 @@ class BaseController < ApplicationController
 	
 	def index
 		@welcome = "Welcome to FHS EventGuide! :)"
-		session[:permission] = 2;
 	end
 	
 	def get_permission
-    @permission = session[:permission]
+    user = User.find_by_id(session[:user_id])
+    if user
+      @permission = user.usertype
+    else
+       @permission = "visitor"
+    end
 	end
 
 	#Actions which need the Event-Model

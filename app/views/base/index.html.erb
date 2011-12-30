@@ -6,11 +6,8 @@
 <div id="right_column">
 	<h1><%= @welcome %></h1>
 		
-	<p></p>Until login doesn't work set permission in BaseController#index:</p>
 	<p>
-	permission = 0 //for visitor<br />
-	permission = 1 //for guide<br />
-	permission = 2 //for admin<br />
+		<%=session[:user_id]%>
 	</p>
 </div>
 
