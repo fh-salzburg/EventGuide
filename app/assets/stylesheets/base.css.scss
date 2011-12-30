@@ -6,3 +6,31 @@
 #ranking {
   width: 100%;
 }
+
+#ranking .tr_header {
+  font-weight: bold;
+}
+
+#ranking .rank {
+  display: block;
+  float: left;
+  width: 10%;
+}
+
+#ranking .name {
+  display: block;
+  float: left;
+  width: 40%;  
+}
+
+#ranking .stars {
+  display: block;
+  float: left;
+  width: 50%;
+  text-align: right;
+}
+
+#ranking td {
+  border-bottom: 1px solid #999999;
+  padding: 5px 0 5px 0;
+}
