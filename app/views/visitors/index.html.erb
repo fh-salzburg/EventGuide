@@ -5,7 +5,14 @@
 
 <div id="right_column">
 	<h1>Besucher</h1>
-	<p>Besucher erstellen | Besucher suchen:</p>
-	<p>Meine Gruppe</p>
+	<%=link_to "Besucher erstellen", new_visitor_path, :class => "block_link_visitor" %>
+
+	<%= form_tag(search_visitor_path , :id => "search_form") do %>
+	    <%= label_tag :searchValue, "Nach Nummer suchen: " %>
+	    <%= text_field_tag :searchValue %>
+	    <%= submit_tag "Go!" %>
+	<% end %>
+	<br/>
+	<h3>Meine Gruppe</h3>
 	<p>not implemented yet</p>
 </div>

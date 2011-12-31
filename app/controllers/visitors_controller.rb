@@ -19,5 +19,9 @@ class VisitorsController < BaseController
     
   end
   
+  def search
+    
+  end
+  
   
 end
