@@ -7,4 +7,3 @@ $(".eventlist").css("background-image","-webkit-gradient(linear, left top, left 
 $(".eventlist").css("border-top","1px solid #68bce8");
 $(".eventlist").css("border-bottom","1px solid #095e87");
 $(".eventlist").css("color","#303031");
-$("a#short_description").css("color","#303031");
