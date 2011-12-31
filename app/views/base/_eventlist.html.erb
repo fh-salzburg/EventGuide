@@ -1,6 +1,6 @@
 <% @events.each do |event| %>
 <div class="eventlist">
   <%= link_to event.name, event, :remote => true %>
-  <%= link_to event.short_description, event, :remote => true, :id => 'short_description' %>
+  <%= link_to event.short_description, event, :remote => true, :class => 'short_description' %>
 </div>
 <% end %>

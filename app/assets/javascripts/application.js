@@ -17,6 +17,16 @@ $(document).ready(function(){
 		$(".select_date").fadeOut("slow");
 	});
 
+
+/* change backgroundcolor for the actuall clicked event*/
+
+$(".eventlist").click(function() {
+  $(".eventlist").css("background-image","-moz-linear-gradient(top, #1a1a1a, #0d0d0d)");
+  $(".eventlist").css("background-image","-webkit-gradient(linear, left top, left bottom, color-stop(0.00, #1a1a1a), color-stop(1.0,#0d0d0d))");
+  $(this).css("background-image","-moz-linear-gradient(top, #9a1a1a, #9d0d0d)");
+  $(this).css("background-image","-webkit-gradient(linear, left top, left bottom, color-stop(0.00, #9a1a1a), color-stop(1.0,#9d0d0d))");
+});
+
   /* The change of the background and textcolor in the eventlist depend on the the menuselection are moved to the viewfiles*/  
 
 	/* This is basic - uses default settings */
