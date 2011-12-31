@@ -20,15 +20,15 @@ body{
 a.block_link {
 	display: block;
 	padding: 10px;
-	width: 140px;
+	width: 120px;
 	text-align: center;
 	border: 1px solid #858585;
 	background-color: #d3d3d3;
 	text-decoration: none;
 	color: black;
-	border-radius: 25px 10px / 10px 25px;
-	-moz-border-radius: 25px 10px / 10px 25px;
-	-webkit-border-radius: 25px 10px / 10px 25px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
 
 a.block_link:hover {
