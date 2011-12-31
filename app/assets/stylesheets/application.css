@@ -26,9 +26,9 @@ a.block_link {
 	background-color: #d3d3d3;
 	text-decoration: none;
 	color: black;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
+	border-radius: 25px 10px / 10px 25px;
+	-moz-border-radius: 25px 10px / 10px 25px;
+	-webkit-border-radius: 25px 10px / 10px 25px;
 }
 
 a.block_link:hover {
