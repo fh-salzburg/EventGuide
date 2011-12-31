@@ -16,7 +16,7 @@ $(document).ready(function(){
 	$("#radioButtonStation").change(function() {
 		$(".select_date").fadeOut("slow");
 	});
- 
+
   /* The change of the background and textcolor in the eventlist depend on the the menuselection are moved to the viewfiles*/  
 
 	/* This is basic - uses default settings */
