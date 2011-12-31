@@ -1,3 +1,22 @@
 // Place all the styles related to the Visitors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+a.block_link_visitor {
+  display: block;
+  padding: 10px;
+  width: 140px;
+  text-align: center;
+  border: 1px solid #858585;
+  background-color: #d3d3d3;
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  float: left;
+}
+
+#search_form {
+  text-align: right;
+}
