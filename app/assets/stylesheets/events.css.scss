@@ -5,7 +5,6 @@
 
 
 .eventlist{
-  //display: block;
 	position: relative;
 	border-bottom: 1px solid #393939;
 	border-top: 1px solid #060606;
@@ -19,11 +18,20 @@
   padding-top: 20px;
   color: #78797a;
   a {
+    display: block;
+    width: 287px;
     color: white;
     text-decoration: none;
   }
+  a#short_description {
+    display: block;
+    width: 287px;
+    height: 100%;
+    color: #78797a;
+    text-decoration: none;
+  }
 }
-
+  
 #facts{
   position: absolute;
   top: 242px;
