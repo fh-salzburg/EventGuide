@@ -6,8 +6,16 @@
  *= require_tree . 
 */
 
+
+@font-face {
+  font-family: 'MetaPro';
+  src: url('../MetaPro/MetaPro-Normal.otf');
+  /*src: url('../MetraPro/raleway_thin.ttf') format('truetype');*/
+}
+
 body{
-overflow: hidden;
+	overflow: hidden;
+	font-family: 'MetaPro';
 }
 
 
