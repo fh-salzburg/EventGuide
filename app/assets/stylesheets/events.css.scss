@@ -64,19 +64,15 @@
   background: url('../images/facts_shadow.png') repeat-y right, url('../images/description.png') repeat-x top left;
 }
 
-.new_event label {
+.event_form label {
   display: block;
   float: left;
   width: 120px;
   font-weight: bold;
 }
 
-.new_event .button {
-  /*text-align: right;*/
- border: 0;
-}
 
-.new_event .select_date {
+.event_form .select_date {
   display: none;
 }
 

@@ -1,14 +1,6 @@
 class UsersController < BaseController
 #all actions with views are in basecontroller
 
-def isAdmin
-  if @permission == "admin"
-    return true
-  else
-    return false
-  end
-end
-
 def index
     if isAdmin
   	  @adminUsers = User.where("usertype = 'admin'").order("email ASC")
@@ -30,7 +22,7 @@ def create
   if isAdmin
   	@user = User.new(params[:user])
   	if @user.save
-  		redirect_to root_url, :notice => "Signed up!"
+  		redirect_to users_path, :notice => "User erstellt!"
   	else
   	render "new"
   	end

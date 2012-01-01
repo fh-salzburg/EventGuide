@@ -38,19 +38,49 @@
 
 #menu {
   position: absolute;
-  border-bottom: 1px solid #e8eae9;
   top: 0;
   left: 307px;
   right: 0;
-  height: 24px;
-  padding: 8px;
+  height: 40px;
+
 
   background: url('../images/oberer_grauer_balken.png') no-repeat;
   background-repeat: repeat-x;
   color: white;
   text-align: right;
   z-index: 30;
-  font-size: 18px;
+  font-size: 16px;
+}
+
+#menu_link_container {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#menu span {
+  display: block;
+  position: relative;
+  top: 0;
+  float: left;
+  height: 30px;
+  min-width: 40px;
+  border-right: 1px solid #6a6a6a;
+  padding: 5px;
+  text-align: center;
+  line-height: 30px;
+}
+
+#menu .menu_link_active {
+  background-color: #f1f1f1;
+}
+
+#menu .menu_link_active a {
+  color: #000000;
+}
+
+#menu .menu_link_active a:hover {
+  color: #000000;
 }
 
 #menu a, #event_menu_left a, #event_menu_right a {
