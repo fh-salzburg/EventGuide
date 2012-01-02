@@ -45,7 +45,7 @@ class BaseController < ApplicationController
 	end
   	
 	def get_eventlist
-		@events = Event.where("isAStation" => true).order("name ASC")
+		@events = Event.where("isAStation" => true).order("title ASC")
 	end
 	
   	
