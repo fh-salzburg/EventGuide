@@ -22,6 +22,10 @@ gem 'jquery-rails'
 # gem 'bcrypt-ruby', '~> 3.0.0'
 gem "bcrypt-ruby", :require => "bcrypt"
 
+
+#use paperclip for pic-upload
+gem 'paperclip'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
