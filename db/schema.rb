@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(:version => 20120102095109) do
     t.string   "usertype"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password_salt"
     t.string   "password_hash"
+    t.string   "password_salt"
   end
 
   create_table "visitors", :force => true do |t|

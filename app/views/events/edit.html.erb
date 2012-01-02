@@ -14,7 +14,7 @@
 	</ul>
 	<% end %>
 
-	<%= form_for @event, :html => { :class => "event_form"} do |e| %>
+	<%= form_for @event, :html => { :class => "event_form", :multipart => true} do |e| %>
 	<p>
 		<%= e.label :isAStation, "Typ" %>
 		<%= radio_button :event, :isAStation, true, :id => "radioButtonStation" %> Station oder Quiz
