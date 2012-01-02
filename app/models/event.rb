@@ -1,5 +1,12 @@
 class Event < ActiveRecord::Base
-  attr_accessible :title, :room, :time_from, :time_to, :isAStation, :description, :short_description, :image
+  attr_accessible :title
+  attr_accessible :room
+  attr_accessible :time_from
+  attr_accessible :time_to
+  attr_accessible :isAStation
+  attr_accessible :description
+  attr_accessible :short_description
+  attr_accessible :image
   
   validates_presence_of :title, :on => :create, :message => "angeben"
   validates_presence_of :room, :on => :create, :message => "angeben"

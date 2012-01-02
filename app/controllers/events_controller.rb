@@ -10,6 +10,7 @@ class EventsController < BaseController
 
   def create
     if isAdmin
+      params[:event][:image] = "test.jpg"
       @event = Event.new(params[:event])
       if @event.save
         redirect_to events_path, :notice => "Event gespeichert!"
