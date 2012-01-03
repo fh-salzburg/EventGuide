@@ -27,7 +27,7 @@ a.block_link_visitor {
 
 #visitors_list td {
   border-bottom: 1px solid #999999;
-  padding: 5px 0 5px 0;
+  padding: 2px 0 2px 0;
 }
 
 #visitors_list span {
@@ -50,4 +50,17 @@ a.block_link_visitor {
 #visitors_list .action {
   width: 15%;
   text-align: right;
+}
+
+#visitors_list .star {
+  display: block;
+  height: 25px;
+  width: 25px;
+  background-image: url("/assets/star_color.png");
+  background-size: contain;
+  background-width: 20px;
+  text-align: center;
+  font-size: 12px;
+  margin-right: 7px;
+  padding-top: 2px;
 }

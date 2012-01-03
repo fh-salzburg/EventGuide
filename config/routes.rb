@@ -4,6 +4,7 @@ EventGuide::Application.routes.draw do
 	get "logout" => "sessions#destroy", :as => "logout"
 	get "login" => "sessions#new", :as => "login"
 	get "signup" => "users#new", :as => "signup"
+	get "visitors/givestar/:id" => "visitors#give_star", :as => "give_star"
   post "visitors/search" => "visitors#search", :as =>"search_visitor"
 
   resources :visitors, :users, :events, :sessions

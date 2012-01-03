@@ -22,9 +22,9 @@
 </p>
 <p>
 	<%= f.label :number_of_stars, "Sterne" %>
-	<%= f.select :number_of_stars, options %>
+	<%= f.text_field :number_of_stars, :size => "76" %>
 </p>
 <p class="button">
-	<%= f.submit "Besucher erstellen", :class => "submit_tag_big" %>
+	<%= f.submit button_text, :class => "submit_tag_big" %>
 </p>
 <% end %> 

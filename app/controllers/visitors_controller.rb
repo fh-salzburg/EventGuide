@@ -44,7 +44,13 @@ class VisitorsController < BaseController
 
   def update
     if is_guide
-
+      visitor = Visitor.find(params[:id])
+      if visitor.update_attributes(params[:visitor])
+        flash[:notice] = "Besucher editiert"
+      else
+        flash[:error] = "Besucher konnte nicht editiert werden"
+      end
+      redirect_to visitors_path      
     else
       redirect_to root_url
     end
@@ -72,4 +78,16 @@ class VisitorsController < BaseController
     end
   end
 
+  def give_star
+    if is_guide
+      visitor = Visitor.find(params[:id])
+      stars = visitor.number_of_stars
+      stars += 1
+      visitor.update_attribute(:number_of_stars, stars)
+      redirect_to visitors_url
+    else
+      redirect_to root_url
+    end
+  end
+  
 end
