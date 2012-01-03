@@ -31,26 +31,21 @@ a.block_link:hover {
 	background-color: #b6b5b5;
 }
 
-#flashbox_notice {
-	position: absolute;
-	top: 55px;
-	right: 15px;
-	z-index: 100;
-	padding: 5px 10px 5px 10px;
-	border: 1px solid black;
-	font-weight: bold;
-	color: green;
-}
 
-#flashbox_error {
+#notice {
+	background-color: #A4E7A0;
+	border: 1px solid #26722D;
+}
+#error {
+	background-color: #F0A8A8;
+	border: 1px solid #900;
+}
+#notice, #error {
 	position: absolute;
 	top: 55px;
 	right: 15px;
-	z-index: 100;
 	padding: 5px 10px 5px 10px;
-	border: 1px solid black;
-	font-weight: bold;
-	color: red;
+	z-index: 100;
 }
 
 #left_column {
@@ -65,7 +60,6 @@ a.block_link:hover {
 	overflow-y: auto;
 	overflow-x: hidden;
 }
-
 #right_column {
 	position: absolute;
 	top: 40px;

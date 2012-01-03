@@ -13,14 +13,10 @@
 		<%= init_tinymce_hammer_if_required %>
 	</head>
 	<body>
-		<% if flash[:notice] %>
-			<div id="flashbox_notice">
-				<%= flash[:notice].html_safe %>
-			</div>
-		<% elsif flash[:error] %>
-			<div id="flashbox_error">
-				<%= flash[:error].html_safe %>
-			</div>
+		<% flash.each do |key, msg| %>
+		<div id="<%= key %>">
+			<%= msg %>
+		</div>
 		<% end %>
 		<%= yield %>
 	</body>
