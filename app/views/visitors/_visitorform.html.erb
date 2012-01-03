@@ -21,9 +21,15 @@
 	<%= f.text_area :interests, :size => "56x5" %>
 </p>
 <p>
-	<%= f.label :number_of_stars, "Sterne" %>
+	<%= f.label :number_of_stars, "Sterne *" %>
 	<%= f.text_field :number_of_stars, :size => "76" %>
 </p>
+<% if current_page?(new_visitor_path)%>
+<p>
+	<%= label_tag :isingroup, "Gruppenmitglied" %>
+	<%= check_box_tag :isingroup %>
+</p>
+<% end %>
 <p class="button">
 	<%= f.submit button_text, :class => "submit_tag_big" %>
 </p>
