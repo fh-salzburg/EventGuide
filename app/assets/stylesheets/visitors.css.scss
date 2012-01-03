@@ -20,3 +20,34 @@ a.block_link_visitor {
 #search_form {
   text-align: right;
 }
+
+#visitors_list{
+  width: 100%;
+}
+
+#visitors_list td {
+  border-bottom: 1px solid #999999;
+  padding: 5px 0 5px 0;
+}
+
+#visitors_list span {
+  display: block;
+  float: left;
+}
+
+#visitors_list .number {
+  width: 5%;
+}
+
+#visitors_list .name {
+  width: 35%;
+}
+
+#visitors_list .interests {
+  width: 45%;
+}
+
+#visitors_list .action {
+  width: 15%;
+  text-align: right;
+}

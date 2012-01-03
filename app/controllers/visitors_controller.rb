@@ -36,7 +36,7 @@ class VisitorsController < BaseController
 
   def edit
     if is_guide
-
+      @visitor = Visitor.find(params[:id])
     else
       redirect_to root_url
     end
@@ -51,11 +51,17 @@ class VisitorsController < BaseController
   end
 
   def destroy
-    if is_guide
-
+  if is_guide
+    visitor = Visitor.find(params[:id])
+    if visitor.delete
+      flash[:notice] = "Besucher gel&ouml;scht"
     else
-      redirect_to root_url
+      flash[:error] = "Besucher konnte nicht gel&ouml;scht werden"      
     end
+    redirect_to visitors_path
+  else
+    redirect_to root_url
+  end
   end
 
   def search

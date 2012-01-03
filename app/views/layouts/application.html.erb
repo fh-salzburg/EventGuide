@@ -15,7 +15,7 @@
 	<body>
 		<% flash.each do |key, msg| %>
 		<div id="<%= key %>">
-			<%= msg %>
+			<%= msg.html_safe %>
 		</div>
 		<% end %>
 		<%= yield %>

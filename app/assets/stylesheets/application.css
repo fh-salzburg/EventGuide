@@ -43,7 +43,7 @@ a.block_link:hover {
 #notice, #error {
 	position: absolute;
 	top: 55px;
-	right: 15px;
+	right: 20px;
 	padding: 5px 10px 5px 10px;
 	z-index: 100;
 }
