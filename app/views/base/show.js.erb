@@ -5,7 +5,7 @@ $('#right_column').html(' \
     Raum: <%= @event.room %> \
     <br/> \
     Beschreibung:<br/> \
-    <%= @event.description %> \
+    <%= @event.description.html_safe %> \
     <br/><br/>  \
   </div> \
 <div id="facts"><br/><br/><br/>test</div> \

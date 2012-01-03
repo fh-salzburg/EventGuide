@@ -30,6 +30,29 @@ a.block_link {
 a.block_link:hover {
 	background-color: #b6b5b5;
 }
+
+#flashbox_notice {
+	position: absolute;
+	top: 55px;
+	right: 15px;
+	z-index: 100;
+	padding: 5px 10px 5px 10px;
+	border: 1px solid black;
+	font-weight: bold;
+	color: green;
+}
+
+#flashbox_error {
+	position: absolute;
+	top: 55px;
+	right: 15px;
+	z-index: 100;
+	padding: 5px 10px 5px 10px;
+	border: 1px solid black;
+	font-weight: bold;
+	color: red;
+}
+
 #left_column {
 	position: absolute;
 	top: 40px;
@@ -55,7 +78,7 @@ a.block_link:hover {
 	overflow-x: hidden;
 	overflow-y: auto;
 }
-form input {
+form input, select {
 	height: 25px;
 }
 form label {

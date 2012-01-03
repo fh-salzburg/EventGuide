@@ -1,0 +1,48 @@
+<%= render 'menu', { :permission => @permission } %>
+<div id="left_column">
+	<%= render 'eventlist' %>
+</div>
+<div id="right_column">
+	<h1>Besucher erstellen</h1>
+	<% if @visitor.errors.any? %>
+		<h3>Es sind folgende Fehler aufgetreten:</h3>
+		<ul>
+			<% for message in @user.errors.full_messages %>
+			<li>
+				<%= message %>
+			</li>
+			<% end %>
+		</ul>
+	<% end 
+	options = [0, 1, 2, 3, 4, 5]
+	%>
+	<%= form_for @visitor, :html => { :class => "user_form"} do |f| %>
+	<p>
+		<%= f.label :number, "Nummer *" %>
+		<%= f.text_field :number, :size => "76" %>
+	</p>
+	<p>
+		<%= f.label :name, "Name" %>
+		<%= f.text_field :name, :size => "76" %>
+	</p>
+	<p>
+		<%= f.label :email, "E-Mail" %>
+		<%= f.email_field :email, :size => "76" %>
+	</p>
+		<p>
+		<%= f.label :mobile, "Telefon" %>
+		<%= f.text_field :mobile, :size => "76" %>
+	</p>
+	<p>
+		<%= f.label :interests, "Interessen" %>
+		<%= f.text_area :interests, :size => "56x5" %>
+	</p>
+			<p>
+		<%= f.label :number_of_stars, "Sterne" %>
+		<%= f.select :number_of_stars, options %>
+	</p>
+	<p class="button">
+		<%= f.submit "Besucher erstellen", :class => "submit_tag_big" %>
+	</p>
+	<% end %>
+</div>

@@ -1,39 +1,52 @@
 class EventsController < BaseController
   #all actions with views are in basecontroller
   def index
-    @allevents = Event.all
+    if is_admin
+      @allevents = Event.all
+    else
+      redirect_to root_url
+    end      
   end
 
   def new
-    @event = Event.new
+    if is_admin
+      @event = Event.new
+    else
+      redirect_to root_url
+    end
   end
 
   def create
-    if isAdmin
+    if is_admin
       params[:event][:image] = "test.jpg"
       @event = Event.new(params[:event])
       if @event.save
-        redirect_to events_path, :notice => "Event gespeichert!"
+        flash[:notice] = "Event gespeichert"
       else
-        render "new"
+         flash[:error] = "Event konnte nicht gespeichert werden"
       end
+      redirect_to events_path
     else
       redirect_to root_url
     end
   end
 
   def edit
-    if isAdmin
+    if is_admin
       @event = Event.find(params[:id])
-    else
+    else   
       redirect_to root_url
     end
   end
 
   def update
-    if isAdmin
+    if is_admin
       event = Event.find(params[:id])
-      event.update_attributes(params[:event])
+      if event.update_attributes(params[:event])
+        flash[:notice] = "Event editiert"
+      else
+        flash[:error] = "Event konnte nicht editiert werden"
+      end
       redirect_to events_path
     else
       redirect_to root_url
@@ -41,9 +54,13 @@ class EventsController < BaseController
   end
 
   def destroy
-    if isAdmin
+    if  is_admin
       event = Event.find(params[:id])
-      event.delete
+      if event.delete
+        flash[:notice] = "Event gel&ouml;scht"
+      else
+        flash[:error] = "Event konnte nicht gel&ouml;scht werden"
+      end
       redirect_to events_path
     else
       redirect_to root_url

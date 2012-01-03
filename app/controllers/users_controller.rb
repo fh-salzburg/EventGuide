@@ -2,7 +2,7 @@ class UsersController < BaseController
 #all actions with views are in basecontroller
 
 def index
-    if isAdmin
+    if is_admin
   	  @adminUsers = User.where("usertype = 'admin'").order("email ASC")
       @guides =     User.where("usertype = 'guide'").order("email ASC")
     else
@@ -11,7 +11,7 @@ def index
 end
 
 def new
-	if isAdmin
+	if is_admin
     @user = User.new
 	else
     redirect_to root_url
@@ -19,12 +19,14 @@ def new
 end
 
 def create
-  if isAdmin
+  if is_admin
   	@user = User.new(params[:user])
   	if @user.save
-  		redirect_to users_path, :notice => "User erstellt!"
+      flash[:notice] = "User erstellt"
+  		redirect_to users_path
   	else
-  	render "new"
+  	  flash[:error] = "User konnte nicht erstellt werden"
+      redirect_to users_path
   	end
   else
     redirect_to root_url
@@ -35,7 +37,7 @@ def show
 end
 
 def edit
-  if isAdmin
+  if is_admin
     @user = User.find(params[:id])
   else
     redirect_to root_url
@@ -43,9 +45,13 @@ def edit
 end
 
 def update
-  if isAdmin
+  if is_admin
     user = User.find(params[:id])
-    user.update_attributes(params[:user])
+    if user.update_attributes(params[:user])
+      flash[:notice] = "User editiert"
+    else
+      flash[:error] = "User konnte nicht editiert werden"
+    end
     redirect_to users_path
   else
     redirect_to root_url
@@ -53,9 +59,13 @@ def update
 end
 
 def destroy
-  if isAdmin
+  if is_admin
     user = User.find(params[:id])
-    user.delete
+    if user.delete
+      flash[:notice] = "User gel&ouml;scht"
+    else
+      flash[:error] = "User konnte nicht gel&ouml;scht werden"      
+    end
     redirect_to users_path
   else
     redirect_to root_url
