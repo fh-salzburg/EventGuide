@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(:version => 20120102095109) do
     t.datetime "time_from"
     t.datetime "time_to"
     t.boolean  "isAStation"
-    t.text     "short_description"
     t.text     "description"
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "short_description"
   end
 
   create_table "subscriptions", :force => true do |t|
@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(:version => 20120102095109) do
     t.string   "usertype"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password_salt"
     t.string   "password_hash"
+    t.string   "password_salt"
   end
 
   create_table "visitors", :force => true do |t|
