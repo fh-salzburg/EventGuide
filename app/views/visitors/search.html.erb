@@ -5,15 +5,19 @@
 
 <div id="right_column">
 	<h1>Besucher</h1>
-	<%=link_to "Besucher erstellen", new_visitor_path, :class => "block_link_visitor" %>
-
 	<%= form_tag(search_visitor_path , :id => "search_form") do %>
 	    <%= label_tag :searchValue, "Nach Nummer suchen: " %>
 	    <%= search_field_tag :searchValue %>
 	    <%= submit_tag "Go!" %>
 	<% end %>
 	<br/>
-	<h3>Meine Gruppe</h3>
+	<h3>Gefunde Besucher</h3>
+	<% if not @success %>
+		<p>
+			Es wurde kein Besucher gefunden. Bitte suche erneut.<br/>
+			<%= link_to "Zur Gruppe", visitors_path%>
+		</p>
+	<% else %>
 	<table id="visitors_list">
 		<tr class="tr_header">
 			<td>
@@ -23,7 +27,7 @@
 				<span class="action">Aktion</span>
 			</td>
 		</tr>
-		<% @visitors.each do |v| %>
+		<% @visitor.each do |v| %>
 			<% is_in_group = false %>
 			<% v.subscriptions.each do |s| %>
 				<% if v.id == s.visitor_id %>
@@ -54,4 +58,5 @@
 			</tr>
 		<% end %>
 	</table>
+	<% end %>
 </div>

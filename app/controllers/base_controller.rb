@@ -4,7 +4,7 @@ class BaseController < ApplicationController
   require "user.rb"
   require "subscription.rb"
 
-  before_filter :get_eventlist,  :only => [:index, :show, :ranking, :stations, :new, :create, :edit]
+  before_filter :get_eventlist,  :only => [:index, :show, :ranking, :stations, :new, :create, :edit, :search]
   before_filter :get_timed_eventlist, :only => [:timed_events]
   before_filter :get_permission
 
@@ -66,7 +66,7 @@ class BaseController < ApplicationController
 
   #Actions which need the Visitor-Model
   def ranking
-    @visitors = Visitor.order("number_of_stars DESC");
+    @visitors = Visitor.where("number_of_stars > 0").order("number_of_stars DESC");
     @rank = 1;
   end
 

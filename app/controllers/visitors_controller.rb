@@ -1,12 +1,8 @@
 class VisitorsController < BaseController
 
   def index
-    if is_admin
-      @visitors = Visitor.includes(:subscriptions)
-      @listtitle = ""
-    elsif is_guide
-      @visitors = Visitor.includes(:subscriptions).where("subscriptions.guide_id = ?", session[:user_id])
-      @listtitle = "Meine Gruppe"
+    if is_guide
+      @visitors = Visitor.includes(:subscriptions).where("subscriptions.guide_id = ? AND subscriptions.is_in_group = ?", session[:user_id], true)
     else
       redirect_to root_url
     end
@@ -89,8 +85,13 @@ class VisitorsController < BaseController
 
   def search
     if is_guide
-
+      @visitor = Visitor.includes(:subscriptions).where("visitors.number = ?", params[:searchValue])
+      if @visitor.count > 0
+        @success = true
       else
+        @success = false
+      end
+    else
       redirect_to root_url
     end
   end
@@ -107,8 +108,56 @@ class VisitorsController < BaseController
     end
   end
       
-  def change_group_state  
-
+  def add_to_group
+    if is_guide
+      
+      visitor = Visitor.includes(:subscriptions).where("subscriptions.visitor_id = ? AND subscriptions.guide_id = ?", params[:id], session[:user_id])                                                
+      
+      if visitor.count > 0
+        visitor.each do |v|
+          v.subscriptions.each do |s|
+            if s.guide_id == session[:user_id]
+              s.update_attribute(:is_in_group, true)
+              flash[:notice] = "Besucher wurde zur Gruppe hinzugef&uuml;gt"
+              break;
+            end
+          end
+        end
+      else
+        subscription = Subscription.new(:guide_id => session[:user_id],
+                                        :visitor_id => params[:id],
+                                        :is_in_group => true
+                                        )        
+        if subscription.save
+              flash[:notice] = "Besucher wurde zur Gruppe hinzugef&uuml;gt"
+        else
+          flash[:error] = "Besucher konnte nicht hinzugef&uuml;gt werden"
+        end
+      end
+      redirect_to visitors_url
+    else
+      redirect_to root_url
+    end
+  end
+  
+  def delete_from_group
+    if is_guide
+      
+      visitor = Visitor.includes(:subscriptions).where("subscriptions.visitor_id = ? AND subscriptions.guide_id = ?", params[:id], session[:user_id])                                                
+      
+      visitor.each do |v|
+        v.subscriptions.each do |s|
+          if s.guide_id == session[:user_id]
+            s.update_attribute(:is_in_group, false)
+            flash[:notice] = "Besucher wurde aus der Gruppe entfernt"
+            break;
+          end
+        end
+      end
+      redirect_to visitors_url
+    else
+      redirect_to root_url
+    end
   end
 
 end

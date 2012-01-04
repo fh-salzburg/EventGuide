@@ -5,7 +5,8 @@ EventGuide::Application.routes.draw do
 	get "login" => "sessions#new", :as => "login"
 	get "signup" => "users#new", :as => "signup"
 	get "visitors/givestar/:id" => "visitors#give_star", :as => "give_star"
-	get "visitors/changegroup" => "visitors#change_group_state", :as => "change_group_state"
+	get "visitors/addtogroup/:id" => "visitors#add_to_group", :as => "add_to_group"
+  get "visitors/deletefromgroup/:id" => "visitors#delete_from_group", :as => "delete_from_group"
   post "visitors/search" => "visitors#search", :as =>"search_visitor"
 
   resources :visitors, :users, :events, :sessions

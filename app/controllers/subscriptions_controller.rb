@@ -1,2 +1,3 @@
-class SubscriptionsController < ApplicationController
+class SubscriptionsController < BaseController 
+  
 end
