@@ -1,0 +1,36 @@
+<% 	options = [0, 1, 2, 3, 4, 5] %>
+<%= form_for visitor, :html => { :class => "user_form"} do |f| %>
+<p>
+	<%= f.label :number, "Nummer *" %>
+	<%= f.text_field :number, :size => "76" %>
+</p>
+<p>
+	<%= f.label :name, "Name" %>
+	<%= f.text_field :name, :size => "76" %>
+</p>
+<p>
+	<%= f.label :email, "E-Mail" %>
+	<%= f.email_field :email, :size => "76" %>
+</p>
+<p>
+	<%= f.label :mobile, "Telefon" %>
+	<%= f.text_field :mobile, :size => "76" %>
+</p>
+<p>
+	<%= f.label :interests, "Interessen" %>
+	<%= f.text_area :interests, :size => "56x5" %>
+</p>
+<p>
+	<%= f.label :number_of_stars, "Sterne *" %>
+	<%= f.text_field :number_of_stars, :size => "76" %>
+</p>
+<% if current_page?(new_visitor_path)%>
+<p>
+	<%= label_tag :isingroup, "Gruppenmitglied" %>
+	<%= check_box_tag :isingroup %>
+</p>
+<% end %>
+<p class="button">
+	<%= f.submit button_text, :class => "submit_tag_big" %>
+</p>
+<% end %> 

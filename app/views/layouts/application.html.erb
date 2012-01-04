@@ -13,6 +13,11 @@
 		<%= init_tinymce_hammer_if_required %>
 	</head>
 	<body>
+		<% flash.each do |key, msg| %>
+		<div id="<%= key %>">
+			<%= msg.html_safe %>
+		</div>
+		<% end %>
 		<%= yield %>
 	</body>
 </html>

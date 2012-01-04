@@ -1,0 +1,18 @@
+<%= render 'menu', { :permission => @permission } %>
+<div id="left_column">
+	<%= render 'eventlist' %>
+</div>
+<div id="right_column">
+	<h1>Besucher erstellen</h1>
+	<% if @visitor.errors.any? %>
+		<h3>Es sind folgende Fehler aufgetreten:</h3>
+		<ul>
+			<% for message in @user.errors.full_messages %>
+			<li>
+				<%= message %>
+			</li>
+			<% end %>
+		</ul>
+	<% end %>
+	<%= render "visitorform",{ :visitor => @visitor, :button_text => "Besucher erstellen" } %>
+</div>

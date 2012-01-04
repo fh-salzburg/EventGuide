@@ -2,19 +2,16 @@
 <div id="left_column">
 	<%= render 'eventlist' %>
 </div>
-
 <div id="right_column">
 	<h1>User</h1>
-	<%=link_to "User anlegen", new_user_path, :class => "block_link" %>
-	
-	<h2>Guides</h2>
+	<%= link_to "User anlegen", new_user_path, :class => "block_link" %> <h2>Guides</h2>
 	<table class="userstable">
 		<tr class="tr_header">
 			<td class="td_id">ID</td>
 			<td class="td_name">Name</td>
 			<td class="td_mail">E-Mail</td>
 			<td class="td_action">Aktion</td>
-		</tr>		
+		</tr>
 		<% @guides.each do |a| %>
 		<tr>
 			<td><%= a.id %></td>
@@ -22,9 +19,8 @@
 			<td><%= a.email %></td>
 			<td class="td_action"><%= link_to image_tag("key.png", :height => "25"), "#" %> <%= link_to image_tag("edit.png", :height => "25"), edit_user_path(a) %> <%= link_to image_tag("delete.png", :height => "25"), user_path(a), :method => :delete, :confirm => "Wirklich löschen?"%></td>
 		</tr>
-	<% end %>
+		<% end %>
 	</table>
-	
 	<h2>Admins</h2>
 	<table class="userstable">
 		<tr class="tr_header">
@@ -40,6 +36,6 @@
 			<td><%= a.email %></td>
 			<td class="td_action"><%= link_to image_tag("key.png", :height => "25"), "#" %> <%= link_to image_tag("edit.png", :height => "25"), edit_user_path(a) %> <%= link_to image_tag("delete.png", :height => "25"), user_path(a), :method => :delete, :confirm => "Wirklich löschen?"%></td>
 		</tr>
-	<% end %>		
+		<% end %>
 	</table>
 </div>
