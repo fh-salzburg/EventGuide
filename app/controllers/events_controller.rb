@@ -19,13 +19,13 @@ class EventsController < BaseController
   def create
     if is_admin
       params[:event][:image] = "test.jpg"
-      @event = Event.new(params[:event])
-      if @event.save
+      event = Event.new(params[:event])
+      if event.save
         flash[:notice] = "Event gespeichert"
       else
-         flash[:error] = "Event konnte nicht gespeichert werden"
+        flash[:error] = "Event konnte nicht gespeichert werden"
       end
-      redirect_to events_path
+      redirect_to events_url
     else
       redirect_to root_url
     end
