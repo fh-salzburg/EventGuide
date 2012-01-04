@@ -24,6 +24,13 @@
 			</td>
 		</tr>
 		<% @visitors.each do |v| %>
+			<% is_in_group = false %>
+			<% v.subscriptions.each do |s| %>
+				<% if v.id == s.visitor_id %>
+				<% is_in_group = s.is_in_group %>
+				<%end %>
+				
+			<% end %>
 			<tr>
 				<td>
 					<span class="number"><%= v.number %></span>
@@ -33,6 +40,12 @@
 					</span>
 					<span class="interests"><%= v.interests %></span>
 					<span class="action">
+						<% 
+						if is_in_group %>
+							<%= link_to image_tag("delete_group.png", :height => "25"), change_group_state_path(0), :confirm => "Wirklich aus der Gruppe entfernen?" %>
+						<% else %>
+							<%= link_to image_tag("add_group.png", :height => "25"), change_group_state_path(1), :confirm => "Wirklich der Gruppe hinzufügen?" %>
+						<% end %>
 						<%= link_to image_tag("star_plus.png", :height => "25"), give_star_path(v), :confirm => "Stern wirklich vergeben?" %> 
 						<%= link_to image_tag("edit.png", :height => "25"), edit_visitor_path(v) %> 
 						<%= link_to image_tag("delete.png", :height => "25"), visitor_path(v), :method => :delete, :confirm => "Wirklich löschen?"%>

@@ -14,7 +14,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
   
   #subscriptions
-  has_many :visitors, :through => :subscription
+  has_many :subscriptions
+  has_many :visitors, :through => :subscriptions
   
   def self.authenticate(email, password)
     user = find_by_email(email)

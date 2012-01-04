@@ -1,10 +1,11 @@
 class VisitorsController < BaseController
+
   def index
     if is_admin
-      @visitors = Visitor.all(:order => "number")
+      @visitors = Visitor.includes(:subscriptions)
       @listtitle = ""
     elsif is_guide
-      @visitors = Visitor.joins(:subscription).where(["user_id = ?", session[:user_id]])
+      @visitors = Visitor.includes(:subscriptions).where("subscriptions.guide_id = ?", session[:user_id])
       @listtitle = "Meine Gruppe"
     else
       redirect_to root_url
@@ -74,6 +75,8 @@ class VisitorsController < BaseController
     if is_guide
       visitor = Visitor.find(params[:id])
       if visitor.delete
+        subscription = Subscription.find_by_visitor_id(params[:id])
+        subscription.delete
         flash[:notice] = "Besucher gel&ouml;scht"
       else
         flash[:error] = "Besucher konnte nicht gel&ouml;scht werden"
@@ -102,6 +105,10 @@ class VisitorsController < BaseController
     else
       redirect_to root_url
     end
+  end
+      
+  def change_group_state  
+
   end
 
 end
