@@ -5,14 +5,11 @@
  *= require_self
  *= require_tree .
  */
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
 
-@font-face {
-	font-family: 'MetaPro';
-	src: url('../MetaPro/MetaPro-Normal.otf');
-}
 body {
 	overflow: hidden;
-	font-family: 'MetaPro';
+	font-family: 'Droid Sans';
 }
 a.block_link {
 	display: block;
