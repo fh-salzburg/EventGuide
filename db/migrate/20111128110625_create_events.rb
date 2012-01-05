@@ -15,6 +15,6 @@ class CreateEvents < ActiveRecord::Migration
   end
   
   def up
-  	add_column :events, :isAStation, :boolean
+  	#add_column :events, :isAStation, :boolean
   end
 end
