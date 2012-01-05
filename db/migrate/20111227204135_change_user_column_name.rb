@@ -1,6 +1,6 @@
 class ChangeUserColumnName < ActiveRecord::Migration
   def up
-	add_column :users, :type, :usertype
+	add_column :users, :userstype, :string
 	remove_column :users, :salt
   end
 
