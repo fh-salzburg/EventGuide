@@ -13,8 +13,4 @@ class CreateEvents < ActiveRecord::Migration
      t.timestamps
     end
   end
-  
-  def up
-  	#add_column :events, :isAStation, :boolean
-  end
 end
