@@ -10,7 +10,7 @@
 body {
 	overflow: hidden;
 	font-family: 'Droid Sans';
-}
+}e
 a.block_link {
 	display: block;
 	padding: 10px;
@@ -57,6 +57,11 @@ a.block_link:hover {
 	overflow-y: auto;
 	overflow-x: hidden;
 }
+
+#event_menu_left a{
+color: #000000;
+}
+
 #right_column {
 	position: absolute;
 	top: 40px;

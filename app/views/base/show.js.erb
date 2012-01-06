@@ -2,11 +2,7 @@ $('#right_column').html(' \
 <div id="image"><%= image_tag(@event.image) %></div> \
 	<div id="description"> \
     <h3><%= @event.title %></h3> \
-    Raum: <%= @event.room %> \
-    <br/> \
-    Beschreibung:<br/> \
     <%= @event.description.html_safe %> \
-    <br/><br/>  \
   </div> \
 <div id="facts"><br/><br/><br/>test</div> \
 ');

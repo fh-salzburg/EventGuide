@@ -14,27 +14,45 @@
   z-index: 40;
 }
 
-#event_menu_left{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200px;
-  //height: 40px;
-  padding: 8px;
-  z-index: 40;
-  font-size: 20px;
-}
+  #event_menu_left{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    padding: 8px;
+    padding-left: 15px;
+    z-index: 40;
+    font-size: 20px;
+    font-weight: bold;
+  }
 
-#event_menu_right{
-  position: absolute;
-  top: 0;
-  left: 200px;
-  width: 107px;
-  //height: 4px;
-  padding: 8px;
-  z-index: 40;
-  font-size: 20px;
-}
+  #event_menu_right{
+    position: absolute;
+    top: 0;
+    left: 200px;
+    width: 107px;
+    padding: 8px;
+    padding-left: 15px;
+    z-index: 40;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+    #event_menu_left a {
+      font-size: 16px;
+      color: #797979;
+      text-decoration: none;
+    }
+
+    #event_menu_right a {
+      font-size: 16px;
+      color: #163f51;
+      text-decoration: none;
+    }
+
+    #event_menu_left a:hover, #event_menu_right a:hover {
+      color: white;
+    }
 
 #menu {
   position: absolute;
@@ -42,8 +60,6 @@
   left: 307px;
   right: 0;
   height: 40px;
-
-
   background: url('../images/oberer_grauer_balken.png') no-repeat;
   background-repeat: repeat-x;
   color: white;
@@ -83,12 +99,12 @@
   color: #000000;
 }
 
-#menu a, #event_menu_left a, #event_menu_right a {
+#menu a {
   color: #dedede;
   text-decoration: none;
 }
 
-#menu a:hover, #event_menu_left a:hover, #event_menu_right a:hover {
+#menu a:hover {
   color: white;
 }
 
