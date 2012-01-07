@@ -5,6 +5,7 @@
 // the compiled file.
 //
 //= require jquery
+//= require fancybox
 //= require jquery_ujs
 //= require_tree .
 
@@ -28,29 +29,10 @@ $(".eventlist").click(function() {
   $(this).css("background-image","-webkit-gradient(linear, left top, left bottom, color-stop(0.00, #4d4d4d), color-stop(1.0,#404040))");
 });
 
-  /* The change of the background and textcolor in the eventlist depend on the the menuselection are moved to the viewfiles*/  
+	
+  $("a.fancybox").fancybox();
+	
 
-	/* This is basic - uses default settings */
-	
-	$("a#loginbutton").fancybox();
-	$("a#newUserbutton").fancybox();
-	$("a#newEventbutton").fancybox();
-	
-	/* Using custom settings */
-	
-	$("a#inline").fancybox({
-		'hideOnContentClick': true
-	});
-
-	/* Apply fancybox to multiple items */
-	
-	$("a.group").fancybox({
-		'transitionIn'	:	'elastic',
-		'transitionOut'	:	'elastic',
-		'speedIn'		:	600, 
-		'speedOut'		:	200, 
-		'overlayShow'	:	false
-	});
 });
 
 
