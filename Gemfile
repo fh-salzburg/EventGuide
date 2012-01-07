@@ -24,10 +24,6 @@ gem 'fancybox-rails'
 # gem 'bcrypt-ruby', '~> 3.0.0'
 gem "bcrypt-ruby", :require => "bcrypt"
 
-
-#use paperclip for pic-upload
-gem "paperclip", "~> 2.4.5"
-
 # Use unicorn as the web server
 # gem 'unicorn'
 

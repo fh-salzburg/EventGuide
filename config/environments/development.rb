@@ -29,5 +29,5 @@ EventGuide::Application.configure do
   config.assets.debug = true
   
   #using paperclip in development
-  Paperclip.options[:command_path] = "/usr/bin/"
-end
+  #Paperclip.options[:command_path] = "/usr/bin/"
+  end

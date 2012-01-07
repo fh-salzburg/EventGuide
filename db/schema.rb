@@ -13,18 +13,8 @@
 
 ActiveRecord::Schema.define(:version => 20120107103508) do
 
-  create_table "events", :force => true do |t|
-    t.string   "title"
-    t.string   "room"
-    t.datetime "time_from"
-    t.datetime "time_to"
-    t.boolean  "isAStation"
-    t.text     "description"
-    t.string   "image"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "short_description"
-  end
+# Could not dump table "events" because of following StandardError
+#   Unknown type 'has_attached_file' for column 'image'
 
   create_table "subscriptions", :force => true do |t|
     t.integer  "guide_id"

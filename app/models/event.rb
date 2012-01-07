@@ -7,14 +7,9 @@ class Event < ActiveRecord::Base
   attr_accessible :description
   attr_accessible :short_description
   attr_accessible :image
+  #upload_column :image
 
-  #has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
-  
-  #paperclip
-  #has_attached_file :image,
-   #  :styles => {
-    #   :thumb=> "100x100#",
-     #  :medium  => "410x175>" }
+
 
   validates_presence_of :title, :on => :create, :message => "angeben"
   validates_presence_of :room, :on => :create, :message => "angeben"
