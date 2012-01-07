@@ -18,7 +18,7 @@ class EventsController < BaseController
 
   def create
     if is_admin
-      #params[:event][:image] = "test.jpg"
+      params[:event][:image] = "test.jpg"
       event = Event.new(params[:event])
       if event.save
         flash[:notice] = "Event gespeichert"
