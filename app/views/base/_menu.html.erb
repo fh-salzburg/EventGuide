@@ -15,7 +15,7 @@
 			<span><%= link_to image_tag("menu_ranking.png"), ranking_path %></span>
 		<% end %>
 
-		<% if permission == "guide" || permission == "admin" %>
+		<% if is_guide %>
 			<% if current_page?(visitors_path) %> 
 				<span class="menu_link_active">
 				<%= link_to image_tag("menu_visitors.png"), visitors_path %></span>
@@ -23,7 +23,7 @@
 				<span><%= link_to image_tag("menu_visitors.png"), visitors_path %></span>
 			<% end %>
 		<% end
-		if permission == "admin" %>
+		if is_admin %>
 			<% if current_page?(events_path) %> 
 				<span class="menu_link_active"><%= link_to "Events verwalten", events_path %></span>
 			<% else %> 
