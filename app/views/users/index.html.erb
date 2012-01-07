@@ -34,7 +34,7 @@
 			<td><%= a.id %></td>
 			<td><%= a.name %></td>
 			<td><%= a.email %></td>
-			<td class="td_action"><%= link_to image_tag("key.png", :height => "25"), "#" %> <%= link_to image_tag("edit.png", :height => "25"), edit_user_path(a) %> <%= link_to image_tag("delete.png", :height => "25"), user_path(a), :method => :delete, :confirm => "Wirklich löschen?"%></td>
+			<td class="td_action"><%= link_to image_tag("edit.png", :height => "25"), edit_user_path(a) %> <%= link_to image_tag("delete.png", :height => "25"), user_path(a), :method => :delete, :confirm => "Wirklich löschen?"%></td>
 		</tr>
 		<% end %>
 	</table>
