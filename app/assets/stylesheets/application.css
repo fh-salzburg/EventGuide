@@ -3,6 +3,7 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
+ *= require fancybox
  *= require_tree .
  */
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans);
@@ -91,12 +92,12 @@ form .button {
 	border: 0;
 }
 form .submit_tag {
-	font-family: 'MetaPro';
+	font-family: 'Droid Sans';
 	height: 40px;
 	width: 60px;
 }
 form .submit_tag_big {
-	font-family: 'MetaPro';
+	font-family: 'Droid Sans';
 	height: 40px;
 	width: 120px;
 }
