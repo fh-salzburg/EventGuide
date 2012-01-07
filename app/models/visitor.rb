@@ -4,7 +4,7 @@ class Visitor < ActiveRecord::Base
    validates_presence_of :number, :on => :create, :message => 'angeben'
    validates_presence_of :number_of_stars, :on => :create, :message => 'angeben'
    validates_numericality_of :number, :on => :create, :message => 'ist keine Zahl'
-   validates_uniqueness_of :number, :on => :create, :message => 'ist schon vorhanden'
+   validates_uniqueness_of :number
    
   #subscriptions
   has_many :subscriptions
