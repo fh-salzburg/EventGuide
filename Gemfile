@@ -24,7 +24,7 @@ gem "bcrypt-ruby", :require => "bcrypt"
 
 
 #use paperclip for pic-upload
-gem 'paperclip'
+gem "paperclip", "~> 2.4.5"
 
 # Use unicorn as the web server
 # gem 'unicorn'

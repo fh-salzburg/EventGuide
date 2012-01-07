@@ -8,6 +8,8 @@ class Event < ActiveRecord::Base
   attr_accessible :short_description
   attr_accessible :image
 
+  #has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  
   #paperclip
   #has_attached_file :image,
    #  :styles => {
