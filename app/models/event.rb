@@ -13,9 +13,9 @@ class Event < ActiveRecord::Base
 
   validates_presence_of :title, :on => :create, :message => "angeben"
   validates_presence_of :room, :on => :create, :message => "angeben"
-  validates_presence_of :isAStation, :on => :create, :message => "angeben"
   validates_presence_of :description, :on => :create, :message => "angeben"
   validates_presence_of :short_description, :on => :create, :message => "angeben"
+  validates_inclusion_of :isAStation, :in => [true, false]
   #validates_attachment_presence :image
   #validates_attachment_size :image, :less_than => 1.megabytes, :message => "zu gross"
   #validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png'], :message => "nur jpg oder png erlaubt"

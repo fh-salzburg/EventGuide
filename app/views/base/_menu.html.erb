@@ -8,39 +8,29 @@
 <div id="menu">
 	<div id="menu_link_container">
 		<span><%= link_to image_tag("menu_home.png"), root_path %></span>
-		<% if current_page?(ranking_path) %> 
-			<span class="menu_link_active">
-			<%= link_to image_tag("menu_ranking_active.png"), ranking_path %></span>
-		<% else %>
-			<span><%= link_to image_tag("menu_ranking.png"), ranking_path %></span>
+		<% if current_page?(ranking_path) %> <span class="menu_link_active"> <%= link_to image_tag("menu_ranking_active.png"), ranking_path %></span>
+		<% else %> <span><%= link_to image_tag("menu_ranking.png"), ranking_path %></span>
 		<% end %>
 
 		<% if is_guide %>
-			<% if current_page?(visitors_path) %> 
-				<span class="menu_link_active">
-				<%= link_to image_tag("menu_visitors.png"), visitors_path %></span>
-			<% else %> 
-				<span><%= link_to image_tag("menu_visitors.png"), visitors_path %></span>
-			<% end %>
+		<% if current_page?(visitors_path) %> <span class="menu_link_active"> <%= link_to image_tag("menu_visitors.png"), visitors_path %></span>
+		<% else %> <span><%= link_to image_tag("menu_visitors.png"), visitors_path %></span>
 		<% end
-		if is_admin %>
-			<% if current_page?(events_path) %> 
-				<span class="menu_link_active"><%= link_to "Events verwalten", events_path %></span>
-			<% else %> 
-				<span><%= link_to "Events verwalten", events_path %></span>
-			<% end %>
+		end
 
-			<% if current_page?(users_path) %> 
-				<span class="menu_link_active"><%= link_to "Benutzer verwalten", users_path %></span>
-			<% else %> 
-				<span><%= link_to "Benutzer verwalten", users_path %></span>
-			<% end %>
+		if is_admin %>
+		<% if current_page?(events_path) %> <span class="menu_link_active"><%= link_to "Events verwalten", events_path %></span>
+		<% else %> <span><%= link_to "Events verwalten", events_path %></span>
 		<% end %>
 
-		<% if permission == "visitor" %> 
-			<span><%= link_to "Login", login_path , :class => "fancybox"%></span>
-		<% else %> 
-			<span><%= link_to "Logout", logout_path %></span>
+		<% if current_page?(users_path) %> <span class="menu_link_active"><%= link_to "Benutzer verwalten", users_path %></span>
+		<% else %> <span><%= link_to "Benutzer verwalten", users_path %></span>
+		<% end
+
+		end%>
+
+		<% if !current_user%> <span><%= link_to "Login", login_path , :class => "fancybox"%></span>
+		<% else %> <span><%= link_to "Logout", logout_path %></span>
 		<% end %>
 	</div>
 </div>

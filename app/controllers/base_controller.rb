@@ -6,33 +6,7 @@ class BaseController < ApplicationController
 
   before_filter :get_eventlist,  :only => [:index, :show, :ranking, :stations, :new, :create, :edit, :search]
   before_filter :get_timed_eventlist, :only => [:timed_events]
-  before_filter :get_permission
 
-  def is_admin
-    if @permission == "admin"
-    return true
-    else
-    return false
-    end
-  end
-
-  def is_guide
-    if @permission == "guide" || @permission == "admin"
-    return true
-    else
-    return false
-    end
-  end
-
-
-  def get_permission
-    user = User.find_by_id(session[:user_id])
-    if user
-      @permission = user.usertype
-    else
-      @permission = "visitor"
-    end
-  end
 
   def index
     @welcome = "Welcome to FHS EventGuide! :)"
