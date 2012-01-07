@@ -30,4 +30,5 @@ EventGuide::Application.configure do
   
   #using paperclip in development
   #Paperclip.options[:command_path] = "/usr/bin/"
+   config.gem 'uploadcolumn', :lib => 'upload_column'
   end
