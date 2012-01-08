@@ -41,5 +41,5 @@ end
 
 # und mysql in Production
 group :production do
-  gem 'mysql2'
+  gem 'sqlite3-ruby'
 end
