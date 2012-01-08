@@ -36,7 +36,7 @@ gem 'capistrano'
 
 # bspw. sqlite in development und test
 group :development, :test do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
+  gem 'sqlite3-ruby', '1.3.3', :require => 'sqlite3'
 end
 
 # und mysql in Production
