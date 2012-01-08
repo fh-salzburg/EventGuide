@@ -1,5 +1,5 @@
 $('#right_column').html(' \
-<div id="image"><%= image_tag(@event.image) %></div> \
+<div id="image"><%= image_tag @event.photo.url(:small) %></div> \
 	<div id="description"> \
     <h3><%= raw @event.title %></h3> \
     <%= raw @event.description %> \
