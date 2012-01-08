@@ -7,6 +7,7 @@ gem 'rails', '3.1.1'
 
 #gem 'sqlite3'
 
+gem 'cocaine'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -42,5 +43,3 @@ end
 group :production do
   gem 'mysql2'
 end
-
-#gem 'cocaine'
