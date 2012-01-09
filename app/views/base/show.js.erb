@@ -1,8 +1,12 @@
 $('#right_column').html(' \
-<div id="image"><%= image_tag @event.photo.url(:small) %></div> \
+<div id="image"><%= image_tag @event.photo.url, :width => "100%" %></div> \
 	<div id="description"> \
-    <h3><%= raw @event.title %></h3> \
-    <%= raw @event.description %> \
+    <h3><%= @event.title %></h3> \
+        <% if @event.isAStation == false %> \
+    Von: <%= german_time(@event.time_from) %> Uhr \
+    <br/> \
+    Bis: <%= german_time(@event.time_to) %> Uhr \
+    <% end %> \
+    <%= @event.description.html_safe %> \
   </div> \
-<div id="facts"><br/><br/><br/>test</div> \
 ');

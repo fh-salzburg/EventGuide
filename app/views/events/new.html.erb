@@ -30,7 +30,7 @@
 	</p>
 	<p>
 		<%= e.label :short_description, "Untertitel" %>
-		<%= e.text_area :short_description, :size => "62x1" %>
+		<%= e.text_field :short_description, :size => "83" %>
 	</p>
 	<p>
 		<%= e.label :description, "Beschreibung" %>
@@ -38,7 +38,7 @@
 	</p>
 	<p>
 		<%= e.label :photo, "Bild" %>
-    <%= e.file_field :photo %>
+    <%= e.file_field :photo %> (Bildgr&ouml;&szlig;e: 500x300)
 	</p>
 	<p class="select_date" >
 		<%= e.label :time_from, "Von" %>
