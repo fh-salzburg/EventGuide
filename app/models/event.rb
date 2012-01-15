@@ -8,10 +8,10 @@ class Event < ActiveRecord::Base
   attr_accessible :short_description
   attr_accessible :image
   
-  #attr_accessible :photo
-  #has_attached_file :photo, :styles => { :small => "800x300>" },
-  #                  :url  => "/assets/images/:id/:style/:basename.:extension",
-  #                  :path => ":rails_root/public/assets/images/:id/:style/:basename.:extension"
+  attr_accessible :photo
+  has_attached_file :photo, :styles => { :small => "800x300>" },
+                    :url  => "/assets/images/:id/:style/:basename.:extension",
+                    :path => ":rails_root/public/assets/images/:id/:style/:basename.:extension"
 
   #validates_attachment_presence :photo
   #validates_attachment_size :photo, :less_than => 5.megabytes

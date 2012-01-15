@@ -21,6 +21,9 @@ end
 gem 'jquery-rails'
 gem 'fancybox-rails'
 
+#paperclip for upload images
+gem 'paperclip'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 gem "bcrypt-ruby", :require => "bcrypt"
