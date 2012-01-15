@@ -3,14 +3,17 @@
 	<%= render 'eventlist' %>
 </div>
 <div id="right_column">
-	<div id="image"><%= image_tag(@event.image) %></div>
+	<div id="image"><%= image_tag @event.photo.url, :width => "100%" %></div>
 	<div id="description">
     <h3><%= @event.title %></h3>
-    Raum: <%= @event.room %>
     <br/>
-    Beschreibung:<br/>
+    <% if @event.isAStation == false %>
+    Von: <%= german_time(@event.time_from) %> Uhr
+    <br/>
+    Bis: <%= german_time(@event.time_to) %> Uhr
+    <% end %>
     <%= @event.description.html_safe %>
     <br/><br/>
   </div>
 </div>
-<div id="facts"><br/><br/><br/>test</div>
+

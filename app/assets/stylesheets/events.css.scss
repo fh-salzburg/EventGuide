@@ -65,15 +65,16 @@
   left: 0;
   right: 0;
   height: 290px;
-  background: url('../images/testbild.png') no-repeat;
+  background: black;
   background-size: 100%;
+  text-align: center;
 }
 
 #description{
   position: absolute;
   top: 291px;
   left: 0;
-  right: 240px;
+  right: 0px;
   bottom: 0;
   background: url('../images/facts_shadow.png') repeat-y right, url('../images/description.png') repeat-x top left;
   padding-left: 22px;
