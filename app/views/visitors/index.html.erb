@@ -42,7 +42,7 @@
 					<span class="action">
 						<% 
 						if is_in_group %>
-							<%= link_to image_tag("delete_group.png", :height => "25"), delete_from_group_path(v), :confirm => "Wirklich aus der Gruppe entfernen?" %>
+							<%= link_to image_tag("delete_group.png", :height => "25"), delete_from_group_path(v), :method => :delete, :confirm => "Wirklich aus der Gruppe entfernen?" %>
 						<% else %>
 							<%= link_to image_tag("add_group.png", :height => "25"), add_to_group_path(v), :confirm => "Wirklich der Gruppe hinzufügen?" %>
 						<% end %>
