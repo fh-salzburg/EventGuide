@@ -2,10 +2,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user
-  
+
   before_filter :get_eventlist,  :only => [:index, :show, :ranking, :stations, :new, :create, :edit, :search]
   before_filter :get_timed_eventlist, :only => [:timed_events]
-  
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
@@ -24,8 +23,7 @@ class ApplicationController < ActionController::Base
     @welcome = "Welcome to FHS EventGuide! :)"
   end
 
-
-  #actions which are needed
+  #actions which are needed in all controllers
   def stations
     respond_to do |format|
       format.html
