@@ -1,18 +1,13 @@
 module ApplicationHelper
-
   def german_time(time)
     if(time == nil)
-    else
+      else
       time.strftime("%d.%m.%Y %H:%M")
     end
   end
 
   def is_admin
-    if !current_user
-      return false
-    end
-    
-    if current_user.usertype == "admin"
+    if current_user && current_user.usertype == "admin"
     return true
     else
     return false
@@ -20,11 +15,7 @@ module ApplicationHelper
   end
 
   def is_guide
-    if !current_user
-      return false
-    end
-    
-    if current_user.usertype == "guide" || current_user.usertype == "admin"
+    if current_user && (current_user.usertype == "guide" || current_user.usertype == "admin")
     return true
     else
     return false
