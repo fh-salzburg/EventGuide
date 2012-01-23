@@ -1,13 +1,7 @@
 class BaseController < ApplicationController
-  require "event.rb"
-  require "visitor.rb"
-  require "user.rb"
-  require "subscription.rb"
 
   before_filter :get_eventlist,  :only => [:index, :show, :ranking, :stations, :new, :create, :edit, :search]
   before_filter :get_timed_eventlist, :only => [:timed_events]
-
-
   def index
     @welcome = "Welcome to FHS EventGuide! :)"
   end

@@ -1,69 +1,46 @@
 class EventsController < BaseController
-  #all actions with views are in basecontroller
+
+  before_filter :is_admin?
   def index
-    if is_admin
-      @allevents = Event.all
-    else
-      redirect_to root_url
-    end      
+    @allevents = Event.all
   end
 
   def new
-    if is_admin
-      @event = Event.new
-    else
-      redirect_to root_url
-    end
+    @event = Event.new
   end
 
   def create
-    if is_admin
-      event = Event.new(params[:event])
-      if event.save
-        flash[:notice] = "Event gespeichert"
-      else
-        flash[:error] = "Event konnte nicht gespeichert werden"
-      end
-      redirect_to events_url
+    event = Event.new(params[:event])
+    if event.save
+      flash[:notice] = "Event gespeichert"
     else
-      redirect_to root_url
+      flash[:error] = "Event konnte nicht gespeichert werden"
     end
+    redirect_to events_url
   end
 
   def edit
-    if is_admin
-      @event = Event.find(params[:id])
-    else   
-      redirect_to root_url
-    end
+    @event = Event.find(params[:id])
   end
 
   def update
-    if is_admin
-      event = Event.find(params[:id])
-      if event.update_attributes(params[:event])
-        flash[:notice] = "Event editiert"
-      else
-        flash[:error] = "Event konnte nicht editiert werden"
-      end
-      redirect_to events_path
+    event = Event.find(params[:id])
+    if event.update_attributes(params[:event])
+      flash[:notice] = "Event editiert"
     else
-      redirect_to root_url
+      flash[:error] = "Event konnte nicht editiert werden"
     end
+    redirect_to events_path
   end
 
   def destroy
-    if  is_admin
-      event = Event.find(params[:id])
-      if event.delete
-        flash[:notice] = "Event gel&ouml;scht"
-      else
-        flash[:error] = "Event konnte nicht gel&ouml;scht werden"
-      end
-      redirect_to events_path
+    event = Event.find(params[:id])
+    if event.delete
+      flash[:notice] = "Event gel&ouml;scht"
     else
-      redirect_to root_url
+      flash[:error] = "Event konnte nicht gel&ouml;scht werden"
     end
+    redirect_to events_path
   end
 
 end

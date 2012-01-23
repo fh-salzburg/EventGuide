@@ -1,35 +1,18 @@
 class ApplicationController < ActionController::Base
-	protect_from_forgery
-	helper_method :current_user
-
-	private
-
-	def current_user
-	  @current_user ||= User.find(session[:user_id]) if session[:user_id]
-	end
-
-  def is_admin
-    if !current_user
-      return false
-    end
-    
-    if current_user.usertype == "admin"
-    return true
-    else
-    return false
-    end
+  protect_from_forgery
+  helper_method :current_user
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  def is_guide
-    if !current_user
-      return false
-    end
-    
-    if current_user.usertype == "guide" || current_user.usertype == "admin"
-    return true
-    else
-    return false
-    end
+  def is_admin?
+    return if current_user && current_user.usertype == "admin"
+    redirect_to root_path
   end
-  
+
+  def is_guide?
+    return if current_user && (current_user.usertype == "guide" || current_user.usertype == "admin")
+    redirect_to root_path
+  end
+
 end

@@ -1,51 +1,34 @@
 class UsersController < BaseController
-#all actions with views are in basecontroller
 
-def index
-    if is_admin
-  	  @adminUsers = User.where("usertype = 'admin'").order("email ASC")
-      @guides =     User.where("usertype = 'guide'").order("email ASC")
-    else
-      redirect_to root_url
-    end
-end
+  before_filter :is_admin?
+  def index
+    @adminUsers = User.where("usertype = 'admin'").order("email ASC")
+    @guides = User.where("usertype = 'guide'").order("email ASC")
+  end
 
-def new
-	if is_admin
+  def new
     @user = User.new
-	else
-    redirect_to root_url
-	end
-end
+  end
 
-def create
-  if is_admin
-  	@user = User.new(params[:user])
-  	if @user.save
+  def create
+    @user = User.new(params[:user])
+    if @user.save
       flash[:notice] = "User erstellt"
-  		redirect_to users_path
-  	else
-  	  flash[:error] = "User konnte nicht erstellt werden"
       redirect_to users_path
-  	end
-  else
-    redirect_to root_url
+    else
+      flash[:error] = "User konnte nicht erstellt werden"
+      redirect_to users_path
+    end
   end
-end
 
-def show
-end
+  def show
+  end
 
-def edit
-  if is_admin
+  def edit
     @user = User.find(params[:id])
-  else
-    redirect_to root_url
   end
-end
 
-def update
-  if is_admin
+  def update
     user = User.find(params[:id])
     if user.update_attributes(params[:user])
       flash[:notice] = "User editiert"
@@ -53,23 +36,16 @@ def update
       flash[:error] = "User konnte nicht editiert werden"
     end
     redirect_to users_path
-  else
-    redirect_to root_url
   end
-end
 
-def destroy
-  if is_admin
+  def destroy
     user = User.find(params[:id])
     if user.delete
       flash[:notice] = "User gel&ouml;scht"
     else
-      flash[:error] = "User konnte nicht gel&ouml;scht werden"      
+      flash[:error] = "User konnte nicht gel&ouml;scht werden"
     end
     redirect_to users_path
-  else
-    redirect_to root_url
   end
-end 
-  
+
 end
