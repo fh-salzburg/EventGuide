@@ -1,4 +1,4 @@
 # encoding: utf-8
-class SubscriptionsController < BaseController 
+class SubscriptionsController < ApplicationController 
   
 end

@@ -1,5 +1,5 @@
 # encoding: utf-8
-class UsersController < BaseController
+class UsersController < ApplicationController
 
   before_filter :is_admin?
   def index

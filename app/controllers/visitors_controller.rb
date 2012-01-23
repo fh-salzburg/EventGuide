@@ -1,5 +1,5 @@
 # encoding: utf-8
-class VisitorsController < BaseController
+class VisitorsController < ApplicationController
   before_filter :is_guide?
   def index
     @visitors = Visitor.includes(:subscriptions).where("subscriptions.guide_id = ? AND subscriptions.is_in_group = ?", session[:user_id], true)
@@ -58,6 +58,11 @@ class VisitorsController < BaseController
       flash[:error] = "Besucher konnte nicht gelöscht werden"
     end
     redirect_to visitors_path
+  end
+
+  def ranking
+    @visitors = Visitor.where("number_of_stars > 0").order("number_of_stars DESC");
+    @rank = 1;
   end
 
   def search

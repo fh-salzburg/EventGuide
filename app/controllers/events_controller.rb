@@ -1,7 +1,7 @@
 # encoding: utf-8
-class EventsController < BaseController
+class EventsController < ApplicationController
 
-  before_filter :is_admin?
+  before_filter :is_admin?, :except => :show
   def index
     @allevents = Event.all
   end

@@ -13,7 +13,7 @@ EventGuide::Application.routes.draw do
 
   #match urls
   match 'index', :to => 'base#index'
-  match 'ranking', :to => 'base#ranking'
+  match 'ranking', :to => 'visitors#ranking'
   match 'timedevents', :to => 'base#timed_events'
   match 'stations', :to => 'base#stations'
   match 'login', :to => 'users#login'
