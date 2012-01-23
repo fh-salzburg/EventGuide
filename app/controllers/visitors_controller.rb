@@ -1,6 +1,6 @@
 # encoding: utf-8
 class VisitorsController < ApplicationController
-  before_filter :is_guide?
+  before_filter :is_guide?, :except => :ranking
   def index
     @visitors = Visitor.includes(:subscriptions).where("subscriptions.guide_id = ? AND subscriptions.is_in_group = ?", session[:user_id], true)
   end

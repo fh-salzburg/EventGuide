@@ -20,7 +20,6 @@ class ApplicationController < ActionController::Base
   end
 
   def index
-    @welcome = "Welcome to FHS EventGuide! :)"
   end
 
   #actions which are needed in all controllers
