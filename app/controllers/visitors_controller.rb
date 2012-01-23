@@ -1,3 +1,4 @@
+# encoding: utf-8
 class VisitorsController < BaseController
   before_filter :is_guide?
   def index
@@ -24,7 +25,7 @@ class VisitorsController < BaseController
       :is_in_group => is_in_group
       )
       if not subscription.save
-        flash[:error] = "Gruppenzugeh&ouml;rigkeit konnte nicht gespeichert werden"
+        flash[:error] = "Gruppenzugehörigkeit konnte nicht gespeichert werden"
       end
       redirect_to visitors_path
     else
@@ -52,9 +53,9 @@ class VisitorsController < BaseController
     if visitor.delete
       subscription = Subscription.find_by_visitor_id(params[:id])
       subscription.delete
-      flash[:notice] = "Besucher gel&ouml;scht"
+      flash[:notice] = "Besucher gelöscht"
     else
-      flash[:error] = "Besucher konnte nicht gel&ouml;scht werden"
+      flash[:error] = "Besucher konnte nicht gelöscht werden"
     end
     redirect_to visitors_path
   end
@@ -84,7 +85,7 @@ class VisitorsController < BaseController
         v.subscriptions.each do |s|
           if s.guide_id == session[:user_id]
             s.update_attribute(:is_in_group, true)
-            flash[:notice] = "Besucher wurde zur Gruppe hinzugef&uuml;gt"
+            flash[:notice] = "Besucher wurde zur Gruppe hinzugefügt"
           break;
           end
         end
@@ -95,7 +96,7 @@ class VisitorsController < BaseController
       :is_in_group => true
       )
       if subscription.save
-        flash[:notice] = "Besucher wurde zur Gruppe hinzugef&uuml;gt"
+        flash[:notice] = "Besucher wurde zur Gruppe hinzugefügt"
       else
         flash[:error] = "Besucher konnte nicht hinzugef&uuml;gt werden"
       end

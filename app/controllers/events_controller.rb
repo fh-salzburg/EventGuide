@@ -1,3 +1,4 @@
+# encoding: utf-8
 class EventsController < BaseController
 
   before_filter :is_admin?

@@ -35,7 +35,7 @@
 				<td>
 					<span class="number"><%= v.number %></span>
 					<span class="name">
-						<span class="star"><%= v.number_of_stars%></span>
+						<%= v.number_of_stars%><%= image_tag("star_plus.png", :width => "15") %>
 						<%= v.name %>
 					</span>
 					<span class="interests"><%= v.interests %></span>

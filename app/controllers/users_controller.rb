@@ -1,3 +1,4 @@
+# encoding: utf-8
 class UsersController < BaseController
 
   before_filter :is_admin?
