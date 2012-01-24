@@ -75,7 +75,7 @@ class VisitorsController < ApplicationController
   end
 
   def give_star
-    visitor = Visitor.find(params[:id])
+    visitor = Visitor.find(params[:visitor_id])
     stars = visitor.number_of_stars
     stars += 1
     visitor.update_attribute(:number_of_stars, stars)
@@ -83,7 +83,7 @@ class VisitorsController < ApplicationController
   end
 
   def add_to_group
-    visitor = Visitor.includes(:subscriptions).where("subscriptions.visitor_id = ? AND subscriptions.guide_id = ?", params[:id], session[:user_id])
+    visitor = Visitor.includes(:subscriptions).where("subscriptions.visitor_id = ? AND subscriptions.guide_id = ?", params[:visitor_id], session[:user_id])
 
     if visitor.count > 0
       visitor.each do |v|
@@ -97,7 +97,7 @@ class VisitorsController < ApplicationController
       end
     else
       subscription = Subscription.new(:guide_id => session[:user_id],
-      :visitor_id => params[:id],
+      :visitor_id => params[:visitor_id],
       :is_in_group => true
       )
       if subscription.save
@@ -110,7 +110,7 @@ class VisitorsController < ApplicationController
   end
 
   def delete_from_group
-    visitor = Visitor.includes(:subscriptions).where("subscriptions.visitor_id = ? AND subscriptions.guide_id = ?", params[:id], session[:user_id])
+    visitor = Visitor.includes(:subscriptions).where("subscriptions.visitor_id = ? AND subscriptions.guide_id = ?", params[:visitor_id], session[:user_id])
 
     visitor.each do |v|
       v.subscriptions.each do |s|

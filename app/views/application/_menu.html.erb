@@ -29,7 +29,7 @@
 
 		end%>
 
-		<% if !current_user%> <span><%= link_to "Login", login_path , :class => "fancybox"%></span>
+		<% if !current_user%> <span><%= link_to "Login", new_session_path , :class => "fancybox"%></span>
 		<% else %> <span><%= link_to "Logout", logout_path %></span>
 		<% end %>
 	</div>

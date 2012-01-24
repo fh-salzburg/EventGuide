@@ -42,11 +42,11 @@
 					<span class="action">
 						<% 
 						if is_in_group %>
-							<%= link_to image_tag("delete_group.png", :height => "25"), delete_from_group_path(v), :method => :delete, :confirm => "Wirklich aus der Gruppe entfernen?" %>
+							<%= link_to image_tag("delete_group.png", :height => "25"), visitor_delete_from_group_path(v), :method => :delete, :confirm => "Wirklich aus der Gruppe entfernen?" %>
 						<% else %>
-							<%= link_to image_tag("add_group.png", :height => "25"), add_to_group_path(v), :confirm => "Wirklich der Gruppe hinzufügen?" %>
+							<%= link_to image_tag("add_group.png", :height => "25"), visitor_add_to_group_path(v), :confirm => "Wirklich der Gruppe hinzufügen?" %>
 						<% end %>
-						<%= link_to image_tag("star_plus.png", :height => "25"), give_star_path(v), :confirm => "Stern wirklich vergeben?" %> 
+						<%= link_to image_tag("star_plus.png", :height => "25"), visitor_give_star_path(v), :confirm => "Stern wirklich vergeben?" %> 
 						<%= link_to image_tag("edit.png", :height => "25"), edit_visitor_path(v) %> 
 						<%= link_to image_tag("delete.png", :height => "25"), visitor_path(v), :method => :delete, :confirm => "Wirklich löschen?"%>
 					</span>
