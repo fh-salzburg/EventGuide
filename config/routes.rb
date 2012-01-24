@@ -2,9 +2,10 @@ EventGuide::Application.routes.draw do
 
   root :to => "application#index"
 
-  #get "visitors/givestar/:id" => "visitors#give_star", :as => "give_star"
-  #get "visitors/addtogroup/:id" => "visitors#add_to_group", :as => "add_to_group"
-  #delete "visitors/deletefromgroup/:id" => "visitors#delete_from_group", :as => "delete_from_group"
+  #match urls
+  match 'index', :to => 'application#index'
+  match 'timedevents', :to => 'application#timed_events'
+  match 'stations', :to => 'application#stations'
 
   resources :users, :events
 
@@ -13,9 +14,8 @@ EventGuide::Application.routes.draw do
     get :new
   end
 
-  match 'logout', :to => 'sessions#destroy'   
-  
-  
+  match 'logout', :to => 'sessions#destroy'
+
   resources :visitors do
     get :give_star
     get :add_to_group
@@ -26,11 +26,5 @@ EventGuide::Application.routes.draw do
 
   post "visitors/search" => "visitors#search", :as =>"search_visitor"
   match 'ranking', :to => 'visitors#ranking'
-  
-  #match urls
-  match 'index', :to => 'application#index'
-
-  match 'timedevents', :to => 'application#timed_events'
-  match 'stations', :to => 'application#stations'
 
 end
