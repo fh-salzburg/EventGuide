@@ -7,7 +7,7 @@ class Event < ActiveRecord::Base
   attr_accessible :description
   attr_accessible :short_description
   attr_accessible :image
-  
+
   attr_accessible :photo
   has_attached_file :photo, :styles => { :small => "800x300>" },
                     :url  => "/assets/images/:id/:style/:basename.:extension",

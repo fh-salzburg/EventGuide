@@ -26,7 +26,6 @@
 		<% if current_page?(users_path) %> <span class="menu_link_active"><%= link_to "Benutzer verwalten", users_path %></span>
 		<% else %> <span><%= link_to "Benutzer verwalten", users_path %></span>
 		<% end
-
 		end%>
 
 		<% if !current_user%> <span><%= link_to "Login", new_session_path , :class => "fancybox"%></span>

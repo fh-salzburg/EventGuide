@@ -16,7 +16,7 @@
 	<% end %>
 	<%= form_for @user, :html => { :class => "user_form"} do |f| %>
 	<p>
-		<%= f.label :usertype, "Typ" %> 
+		<%= f.label :usertype, "Typ" %>
 			<%= radio_button :user, :usertype, "admin" %> Admin
 			<%= radio_button :user, :usertype, "guide" %> Guide
 	</p>

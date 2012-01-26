@@ -9,13 +9,13 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans);
 
 body {
-	overflow: hidden;
-	font-family: 'Droid Sans';
+  overflow: hidden;
+  font-family: 'Droid Sans';
 }
 
 a.block_link {
-	display: block;
-	padding: 10px;
+  display: block;
+  padding: 10px;
 	width: 120px;
 	text-align: center;
 	border: 1px solid #858585;
@@ -61,7 +61,7 @@ a.block_link:hover {
 }
 
 #event_menu_left a{
-color: #000000;
+  color: #000000;
 }
 
 #right_column {

@@ -22,10 +22,10 @@
 			<td><%= event.room %></td>
 			<td class="station_pic">
 				<%= if event.isAStation == true
-						image_tag("ok.png", :height => "20")	
+						image_tag("ok.png", :height => "20")
 					else
 						image_tag("no.png", :height => "20")
-					end		
+					end
 				 %>
 			</td>
 			<td align="center"><%= german_time(event.time_from) %> - <%= german_time(event.time_to) %></td>
@@ -34,4 +34,3 @@
 	<% end %>
 	</table>
 </div>
-
