@@ -10,6 +10,7 @@
 //= require_tree .
 
 $(document).ready(function(){
+  var showLogin = true;
 	$("#radioButtonEvent").change(function() {
 		$(".select_date").fadeIn("slow");
 	});
@@ -26,6 +27,17 @@ $(document).ready(function(){
     $(this).css("background-image","-webkit-gradient(linear, left top, left bottom, color-stop(0.00, #4d4d4d), color-stop(1.0,#404040))");
   });
   $("a.fancybox").fancybox();
+
+  //animation for Login- and Logoutmessage
+  if(!$('fancybox-outer').is(':visible') && showLogin == true)
+  {
+    $("#notice").fadeIn(1000);
+    $("#notice").delay(1000);
+    $("#notice").fadeOut(500);
+  }
+  $('.fancybox').click(function(){
+    showLogin == false;
+  });
 });
 
 
