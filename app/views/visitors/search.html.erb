@@ -2,60 +2,46 @@
 <div id="left_column">
 	<%= render 'eventlist' %>
 </div>
-
 <div id="right_column">
 	<h1>Besucher</h1>
 	<%= form_tag(search_visitor_path , :id => "search_form") do %>
-	    <%= label_tag :searchValue, "Nach Nummer suchen: " %>
-	    <%= search_field_tag :searchValue %>
-	    <%= submit_tag "Go!" %>
+	<%= label_tag :searchValue, "Nach Nummer suchen: " %>
+	<%= search_field_tag :searchValue %>
+	<%= submit_tag "Go!" %>
 	<% end %>
 	<br/>
 	<h3>Gefunde Besucher</h3>
 	<% if not @success %>
-		<p>
-			Es wurde kein Besucher gefunden. Bitte suche erneut.<br/>
-			<%= link_to "Zur Gruppe", visitors_path%>
-		</p>
+	<p>
+		Es wurde kein Besucher gefunden. Bitte suche erneut.
+		<br/>
+		<%= link_to "Zur Gruppe", visitors_path%>
+	</p>
 	<% else %>
 	<table id="visitors_list">
 		<tr class="tr_header">
-			<td>
-				<span class="number">#</span>
-				<span class="name">Name</span>
-				<span class="interests">Interessen</span>
-				<span class="action">Aktion</span>
-			</td>
+			<td><span class="number">#</span><span class="name">Name</span><span class="interests">Interessen</span><span class="action">Aktion</span></td>
 		</tr>
 		<% @visitor.each do |v| %>
-			<% is_in_group = false %>
-			<% v.subscriptions.each do |s| %>
-				<% if v.id == s.visitor_id %>
-				<% is_in_group = s.is_in_group %>
-				<%end %>
+		<% is_in_group = false %>
+		<% v.subscriptions.each do |s| %>
+		<% if v.id == s.visitor_id %>
+		<% is_in_group = s.is_in_group %>
+		<%end %>
 
-			<% end %>
-			<tr>
-				<td>
-					<span class="number"><%= v.number %></span>
-					<span class="name">
-						<%= v.number_of_stars%><%= image_tag("star_plus.png", :width => "15") %>
-						<%= v.name %>
-					</span>
-					<span class="interests"><%= v.interests %></span>
-					<span class="action">
-						<%
-						if is_in_group %>
-							<%= link_to image_tag("delete_group.png", :height => "25"), visitor_delete_from_group_path(v), :confirm => "Wirklich aus der Gruppe entfernen?" %>
-						<% else %>
-							<%= link_to image_tag("add_group.png", :height => "25"), visitor_add_to_group_path(v), :confirm => "Wirklich der Gruppe hinzufügen?" %>
-						<% end %>
-						<%= link_to image_tag("star_plus.png", :height => "25"), visitor_give_star_path(v), :confirm => "Stern wirklich vergeben?" %>
-						<%= link_to image_tag("edit.png", :height => "25"), edit_visitor_path(v) %>
-						<%= link_to image_tag("delete.png", :height => "25"), visitor_path(v), :method => :delete, :confirm => "Wirklich löschen?"%>
-					</span>
-				</td>
-			</tr>
+		<% end %>
+		<tr>
+			<td><span class="number"><%= v.number %></span><span class="name"> <%= v.number_of_stars%><%= image_tag("star_plus.png", :width => "15") %>
+				<%= v.name %> </span><span class="interests"><%= v.interests %></span><span class="action"> <%
+				if is_in_group %>
+				<%= link_to image_tag("delete_group.png", :height => "25"), visitor_delete_from_group_path(v), :method => :delete, :confirm => "Wirklich aus der Gruppe entfernen?" %>
+				<% else %>
+				<%= link_to image_tag("add_group.png", :height => "25"), visitor_add_to_group_path(v), :confirm => "Wirklich der Gruppe hinzufügen?" %>
+				<% end %>
+				<%= link_to image_tag("star_plus.png", :height => "25"), visitor_give_star_path(v), :confirm => "Stern wirklich vergeben?" %>
+				<%= link_to image_tag("edit.png", :height => "25"), edit_visitor_path(v) %>
+				<%= link_to image_tag("delete.png", :height => "25"), visitor_path(v), :method => :delete, :confirm => "Wirklich löschen?"%> </span></td>
+		</tr>
 		<% end %>
 	</table>
 	<% end %>
