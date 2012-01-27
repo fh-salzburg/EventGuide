@@ -32,7 +32,7 @@ $(document).ready(function(){
   //animation for Login- and Logoutmessage
   if(!$('fancybox-outer').is(':visible') && showLogin == true)
   {
-    $(".flashMessage").fadeIn(1000);
+    $(".flashMessage").fadeIn(500);
     $(".flashMessage").delay(1000);
     $(".flashMessage").fadeOut(500);
   }
