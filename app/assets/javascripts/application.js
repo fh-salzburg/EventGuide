@@ -8,6 +8,7 @@
 //= require fancybox
 //= require jquery_ujs
 //= require_tree .
+var msg = /erfolgreich/;
 
 $(document).ready(function(){
   var showLogin = true;
@@ -31,10 +32,11 @@ $(document).ready(function(){
   //animation for Login- and Logoutmessage
   if(!$('fancybox-outer').is(':visible') && showLogin == true)
   {
-    $("#notice").fadeIn(1000);
-    $("#notice").delay(1000);
-    $("#notice").fadeOut(500);
+    $(".flashMessage").fadeIn(1000);
+    $(".flashMessage").delay(1000);
+    $(".flashMessage").fadeOut(500);
   }
+
   $('.fancybox').click(function(){
     showLogin == false;
   });

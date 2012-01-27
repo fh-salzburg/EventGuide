@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<% flash.each do |key, msg| %>
-		<div id="<%= key %>">
+		<div id="<%= key %>" class="flashMessage">
 			<%= msg.html_safe %>
 		</div>
 		<% end %>
