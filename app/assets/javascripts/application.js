@@ -11,6 +11,12 @@
 var msg = /erfolgreich/;
 
 $(document).ready(function(){
+
+  if(navigator.userAgent.match(/iPhone/) || navigator.userAgent.match(/Android/) || navigator.userAgent.match(/Blackberry/)){
+	 $("#left_column").css("overflow","auto");
+	 $("body").css("overflow","auto");
+  }
+  
   var showLogin = true;
 	$("#radioButtonEvent").change(function() {
 		$(".select_date").fadeIn("slow");
