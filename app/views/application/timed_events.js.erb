@@ -9,6 +9,7 @@ $(".eventlist").css("border-bottom","1px solid #095e87");
 $(".eventlist").css("color","#303031");
 $("a.short_description").css("color","#303031");
 $(".eventlist a.event_room").css("color","#acdcf6");
+//if the right_column is heigher than the left, the left background will be to short, for this we strech the height of the left_column to the height of the right one.
 var rightColHeight = $('#right_column').height();
 $('#left_column').css("height", rightColHeight);
 

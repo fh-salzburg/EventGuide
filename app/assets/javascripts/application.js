@@ -12,6 +12,7 @@ var msg = /erfolgreich/;
 
 $(document).ready(function(){
 
+  //if Browser is not from a Smartphone then add some CSS
   if(!navigator.userAgent.match(/iPhone/) && !navigator.userAgent.match(/Android/) && !navigator.userAgent.match(/Blackberry/))
   {
 	  $("body").css("overflow","hidden");
@@ -22,6 +23,7 @@ $(document).ready(function(){
 	  $("#left_column").css("bottom","0");
 	  $("#right_column").css("bottom","0");
   }
+  //if we have a long list on the left column, the background of right one ends to early, because the height is limited to the content or right_column. Against this we strech the righ column to the height of the left column.
   else
   {
 	var leftColHight = $('#left_column').height();
