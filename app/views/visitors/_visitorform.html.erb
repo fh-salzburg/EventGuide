@@ -1,10 +1,6 @@
 <% 	options = [0, 1, 2, 3, 4, 5] %>
 <%= form_for visitor, :html => { :class => "user_form"} do |f| %>
 <p>
-	<%= f.label :number, "Nummer *" %>
-	<%= f.text_field :number, :size => "76" %>
-</p>
-<p>
 	<%= f.label :name, "Name *" %>
 	<%= f.text_field :name, :size => "76" %>
 </p>
