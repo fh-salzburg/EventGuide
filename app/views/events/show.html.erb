@@ -6,7 +6,6 @@
 	<div id="image"><%= image_tag @event.photo.url, :width => "100%" %></div>
 	<div id="description">
     <h3><%= @event.title %></h3>
-    <br/>
     <% if @event.isAStation == false %>
     Von: <%= german_time(@event.time_from) %> Uhr
     <br/>
