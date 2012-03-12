@@ -72,8 +72,9 @@
   position: absolute;
   top: 291px;
   left: 0;
-  right: 0px;
-  bottom: 0;
+  right: 0;
+  bottom: 0px;
+  min-height: 300px;
   background: url('../images/facts_shadow.png') repeat-y right, url('../images/description.png') repeat-x top left;
   padding-left: 22px;
 }

@@ -9,7 +9,7 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans);
 
 body {
-  overflow: hidden;
+  //overflow: hidden;
   font-family: 'Droid Sans';
 }
 
@@ -62,12 +62,10 @@ a.block_link:hover {
 	top: 40px;
 	left: 0;
 	width: 307px;
-	height: 94.3%;
+	min-height: auto;
 	background-image: -moz-linear-gradient(top, #0f92d8, #1573a4);
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #0f92d8), color-stop(1.0,#1573a4));
 	z-index: 20;
-	overflow-y: auto;
-	overflow-x: hidden;
 }
 
 #event_menu_left a{
@@ -79,12 +77,12 @@ a.block_link:hover {
 	top: 40px;
 	left: 307px;
 	right: 0;
-	bottom: 0;
-	background-color: #f1f1f1;
+	min-height: auto;
+	background-color: black;
+	background: url('../images/facts_shadow.png') repeat-y right, url('../images/description.png') repeat-x top left;
+	background-color: #dadada;
 	padding: 0 20px 0 20px;
 	z-index: 10;
-	overflow-x: hidden;
-	overflow-y: auto;
 }
 form input, select {
 	height: 25px;

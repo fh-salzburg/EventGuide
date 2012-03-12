@@ -12,9 +12,20 @@ var msg = /erfolgreich/;
 
 $(document).ready(function(){
 
-  if(navigator.userAgent.match(/iPhone/) || navigator.userAgent.match(/Android/) || navigator.userAgent.match(/Blackberry/)){
-	 $("#left_column").css("overflow","auto");
-	 $("body").css("overflow","auto");
+  if(!navigator.userAgent.match(/iPhone/) && !navigator.userAgent.match(/Android/) && !navigator.userAgent.match(/Blackberry/))
+  {
+	  $("body").css("overflow","hidden");
+	  $("#left_column").css("overflow-y","auto");
+	  $("#right_column").css("overflow-y","auto");
+	  $("#left_column").css("overflow-x","hidden");
+	  $("#right_column").css("overflow-x","hidden");
+	  $("#left_column").css("bottom","0");
+	  $("#right_column").css("bottom","0");
+  }
+  else
+  {
+	var leftColHight = $('#left_column').height();
+	$("#right_column").css("height",leftColHight);
   }
   
   var showLogin = true;
