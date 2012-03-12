@@ -1,4 +1,4 @@
-<% 	options = [0, 1, 2, 3, 4, 5] %>
+<% 	options = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] %>
 <%= form_for visitor, :html => { :class => "user_form"} do |f| %>
 <p>
 	<%= f.label :name, "Name *" %>
@@ -18,7 +18,7 @@
 </p>
 <p>
 	<%= f.label :number_of_stars, "Sterne *" %>
-	<%= f.text_field :number_of_stars, :size => "76" %>
+	<%= f.select :number_of_stars, options, :size => "76" %>
 </p>
 <% if current_page?(new_visitor_path)%>
 <p>
