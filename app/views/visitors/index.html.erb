@@ -7,7 +7,7 @@
 	<%= link_to "Besucher erstellen", new_visitor_path, :class => "block_link_visitor" %>
 
 	<%= form_tag(search_visitor_path , :id => "search_form") do %>
-	<%= label_tag :searchValue, "Nach Nummer suchen: " %>
+	<%= label_tag :searchValue, "Nach Nachnamen suchen: " %>
 	<%= search_field_tag :searchValue %>
 	<%= submit_tag "Go!" %>
 	<% end %>

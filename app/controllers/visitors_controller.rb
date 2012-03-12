@@ -66,7 +66,7 @@ class VisitorsController < ApplicationController
   end
 
   def search
-    @visitor = Visitor.includes(:subscriptions).where("visitors.number = ? AND visitors.id = subscriptions.visitor_id", params[:searchValue])
+    @visitor = Visitor.includes(:subscriptions).where("name LIKE ? AND visitors.id = subscriptions.visitor_id", params[:searchValue])
      
     if @visitor.count > 0
     @success = true
