@@ -10,8 +10,8 @@
     Von: <%= german_time(@event.time_from) %> Uhr
     <br/>
     Bis: <%= german_time(@event.time_to) %> Uhr
-    <% end %>
     <br/></br/>
+    <% end %>
     <%= sanitize @event.description, :tags => %w(p br b code) %>
     <br/><br/>
   </div>
