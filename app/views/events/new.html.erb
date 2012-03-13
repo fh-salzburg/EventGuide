@@ -30,11 +30,13 @@
 	</p>
 	<p>
 		<%= e.label :short_description, "Untertitel" %>
-		<%= e.text_field :short_description, :size => "83" %>
+		<%= e.text_area :short_description, :size => "62x1" %>
 	</p>
 	<p>
 		<%= e.label :description, "Beschreibung" %>
-		<%= e.tinymce :description, :size => "62x10" %>
+		<%= e.text_area :description, :size => "62x10" %>
+		<br/>
+		<label>&nbsp;</label><font size="-1">Erlaubte Tags: &lt;b&gt; &lt;p&gt; &lt;br/&gt;</font>
 	</p>
 	<p>
 		<%= e.label :photo, "Bild" %>
