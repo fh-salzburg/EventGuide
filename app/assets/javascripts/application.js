@@ -12,6 +12,8 @@ var msg = /erfolgreich/;
 
 $(document).ready(function(){
 
+  $('#description').css("top", $('.imgRightCol').height());
+  
   //if Browser is not from a Smartphone then add some CSS
   if(!navigator.userAgent.match(/iPhone/) && !navigator.userAgent.match(/Android/) && !navigator.userAgent.match(/Blackberry/))
   {
@@ -60,12 +62,8 @@ $(document).ready(function(){
     showLogin == false;
   });
   
-  var descriptionTop = $('.imgRightCol').height();
-  $('#description').css("top", descriptionTop);
-  
   $(window).resize(function() {
-    var descriptionTop = $('.imgRightCol').height();
-    $('#description').css("top", descriptionTop);
+    $('#description').css("top", $('.imgRightCol').height());
   });
 });
 
