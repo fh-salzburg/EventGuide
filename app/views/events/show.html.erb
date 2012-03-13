@@ -3,7 +3,7 @@
 	<%= render 'eventlist' %>
 </div>
 <div id="right_column">
-	<div id="image"><%= image_tag @event.photo.url, :width => "100%" %></div>
+	<div id="image"><%= image_tag @event.photo.url, :width => "100%", :class => "imgRightCol" %></div>
 	<div id="description">
     <h3><%= @event.title %></h3>
     <% if @event.isAStation == false %>

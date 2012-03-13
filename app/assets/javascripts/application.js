@@ -59,6 +59,14 @@ $(document).ready(function(){
   $('.fancybox').click(function(){
     showLogin == false;
   });
+  
+  var descriptionTop = $('.imgRightCol').height();
+  $('#description').css("top", descriptionTop);
+  
+  $(window).resize(function() {
+    var descriptionTop = $('.imgRightCol').height();
+    $('#description').css("top", descriptionTop);
+  });
 });
 
 
