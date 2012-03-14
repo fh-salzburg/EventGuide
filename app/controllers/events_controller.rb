@@ -3,7 +3,7 @@ class EventsController < ApplicationController
 
   before_filter :is_admin?, :except => :show
   def index
-    @allevents = Event.all.order("title ASC")
+    @allevents = Event.all
   end
 
   def show
