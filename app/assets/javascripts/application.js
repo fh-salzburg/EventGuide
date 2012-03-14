@@ -9,12 +9,11 @@
 //= require jquery_ujs
 //= require_tree .
 var msg = /erfolgreich/;
-$('#description').css("top", $('.imgRightCol').height());
 
 $(document).ready(function(){
-  
+
   //if Browser is not from a Smartphone then add some CSS
-  if(!navigator.userAgent.match(/iPhone/) && !navigator.userAgent.match(/Android/) && !navigator.userAgent.match(/Blackberry/))
+  if(!navigator.userAgent.match(/iPad/) && !navigator.userAgent.match(/iPhone/) && !navigator.userAgent.match(/Android/) && !navigator.userAgent.match(/Blackberry/))
   {
 	  $("body").css("overflow","hidden");
 	  $("#left_column").css("overflow-y","auto");
@@ -59,10 +58,6 @@ $(document).ready(function(){
 
   $('.fancybox').click(function(){
     showLogin == false;
-  });
-  
-  $(window).resize(function() {
-    $('#description').css("top", $('.imgRightCol').height());
   });
 });
 

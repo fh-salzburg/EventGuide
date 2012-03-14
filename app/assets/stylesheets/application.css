@@ -81,7 +81,7 @@ a.block_link:hover {
 	background-color: black;
 	background: url('../images/facts_shadow.png') repeat-y right, url('../images/description.png') repeat-x top left;
 	background-color: #dadada;
-	padding: 0 20px 0 20px;
+	//padding: 0 20px 0 20px;
 	z-index: 10;
 }
 form input, select {
