@@ -7,10 +7,10 @@
 	<div id="description">
     <h3><%= @event.title %></h3>
     <% if @event.isAStation == false %>
-    Von: <%= german_time(@event.time_from) %> Uhr
-    <br/>
-    Bis: <%= german_time(@event.time_to) %> Uhr
-    <br/></br/>
+		Von: <%= german_time(@event.time_from) %> Uhr
+		<br/>
+		Bis: <%= german_time(@event.time_to) %> Uhr
+		<br/></br/><br/>
     <% end %>
     <%= sanitize @event.description, :tags => %w(p br b code) %>
     <br/><br/>
