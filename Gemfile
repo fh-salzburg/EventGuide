@@ -40,7 +40,7 @@ gem 'capistrano'
 # bspw. sqlite in development und test
 group :development, :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'
-  gem 'win32console'
+ # gem 'win32console'
 end
 
 # und mysql in Production
