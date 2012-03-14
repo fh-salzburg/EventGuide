@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
   end
 
   def get_timed_eventlist
-    @events = Event.where("isAStation" => false).order("time_from DESC")
+    @events = Event.where("isAStation" => false).order("time_from ASC")
   end
 
   def get_eventlist
